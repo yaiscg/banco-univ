@@ -10,7 +10,7 @@
     } 
 
     button {
-        @apply text-white border bg-cyan-700 border-cyan-700
-        hover:bg-transparent hover:text-cyan-700 rounded-md
+        @apply text-white border bg-primary border-primary
+        hover:bg-transparent hover:text-primary rounded-md
     } 
 }  

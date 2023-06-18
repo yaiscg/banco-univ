@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    extend: {
+      colors: {
+          primary: "#085f63",
+          secondary: "#49beb7",
+          accent: "#49beb7",
+          backgroud: "#49beb7"
+        }
+    },
     fontFamily: {
       Montserrat: "Montserrat Alternates"
     },
