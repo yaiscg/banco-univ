@@ -36,10 +36,10 @@ const Navbar = () => {
 
 
             <ul className={!nav ? "hidden" : "absolute bg-zinc-50 w-full px-8"}>
-                <li className="border-b-2 border-gray-200 w-full">Nosotros</li>
-                <li className="border-b-2 border-gray-200 w-full">Estudiantes</li>
-                <li className="border-b-2 border-gray-200 w-full">Servicios</li>
-                <li className="border-b-2 border-gray-200 w-full">Contacto</li>
+                <li className="border-b-2 border-indigo-100 w-full">Nosotros</li>
+                <li className="border-b-2 border-indigo-100 w-full">Estudiantes</li>
+                <li className="border-b-2 border-indigo-100 w-full">Servicios</li>
+                <li className="border-b-2 border-indigo-100 w-full">Contacto</li>
 
                 <div className="flex flex-col my-4">
                     <button className="bg-transparent text-primary px-8 py-3 mb-4">Regístrate</button>
