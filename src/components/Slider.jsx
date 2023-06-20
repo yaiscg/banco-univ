@@ -42,17 +42,17 @@ const Slider = () => {
   };
   
   return (
-    <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group">
+    <div name="home" className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group bg-zinc-50">
       <div 
         style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
         ></div>
         {/* Left arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-white/20 cursor-pointer mx-10">
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-white/20 text-accent cursor-pointer mx-10">
         <ArrowLeftIcon onClick={prevSlide} className="w-5"/>
       </div>
         {/* Right arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-white/20 cursor-pointer mx-10">
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-white/20 text-accent cursor-pointer mx-10">
         <ArrowRightIcon onClick={nextSlide} className="w-5"/>
       </div>
       <div className="flex top-4 justify-center py-2">
@@ -60,7 +60,7 @@ const Slider = () => {
           <div 
             key={slideIndex} 
             onClick={() => goToSlide(slideIndex)} 
-            className="text-2xl cursor-pointer">
+            className="text-2xl cursor-pointer text-accent">
             <RxDotFilled/>
           </div>
         ))}

@@ -3,8 +3,8 @@ import React from "react";
 const Footer = () => {
     return (
 
-        <div className='w-full mt-24 bg-primary text-white py-y px-2'>
-        <div className='max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6 py-8'>
+        <div name ="four" className='w-full bg-primary text-white py-12 px-8'>
+        <div className='max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6'>
 
             <div>
                 <h6 className='font-bold uppercase pt-2'>Estudiantes</h6>
@@ -49,7 +49,6 @@ const Footer = () => {
                     <li className="py-1">Correo electrónico: info@bancouniversitario.com.ve</li>
                 </ul>
             </div>
-            
             
         </div>
 

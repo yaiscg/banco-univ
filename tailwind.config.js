@@ -11,10 +11,10 @@ module.exports = {
           secondary: "#49beb7",
           accent: "#49beb7",
           backgroud: "#49beb7"
-        }
-    },
-    fontFamily: {
-      Montserrat: "Montserrat Alternates"
+        },
+      fontFamily: {
+          Montserrat: "Montserrat Alternates"
+        },
     },
     screens: {
       sm: '640px',
