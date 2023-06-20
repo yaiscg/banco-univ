@@ -6,13 +6,13 @@ import {ArrowLeftIcon, ArrowRightIcon, StarIcon} from "@heroicons/react/24/outli
 const Slider = () => {
   const slides = [
     {
-      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/Inicio.png?raw=true',
+      url: '',
     },
     {
       url: 'https://www.moneysavingexpert.com/content/dam/mse/editorial-image-library/guide-images/hero-how-do-credit-cards-work.jpg',
     },
     {
-      url: 'https://nursingnotes.co.uk/wp-content/uploads/2019/09/Student-money-saving-tips.jpg',
+      url: '',
     },
 
     {
