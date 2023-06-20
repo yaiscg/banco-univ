@@ -6,7 +6,7 @@ import {ArrowLeftIcon, ArrowRightIcon, StarIcon} from "@heroicons/react/24/outli
 const Slider = () => {
   const slides = [
     {
-      url: 'https://shivalikbank.com/public/frontendassets/images/mobile-banking.jpg',
+      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/Inicio.png?raw=true',
     },
     {
       url: 'https://www.moneysavingexpert.com/content/dam/mse/editorial-image-library/guide-images/hero-how-do-credit-cards-work.jpg',
@@ -42,7 +42,7 @@ const Slider = () => {
   };
   
   return (
-    <div name="home" className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group bg-zinc-50">
+    <div name="home" className="max-w-[1400px] h-[640px] w-full m-auto py-16 px-4 relative group bg-zinc-50">
       <div 
         style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500"

@@ -7,7 +7,7 @@ import estudiantes from '../assets/estudiantes.jpg'
 const Students = () => {
     return (
         <div name='two' className='w-full'>
-            <div className='w-full h-[652px] bg-black/50 absolute'>
+            <div className='w-full h-[560px] bg-black/50 absolute'>
               <img className='w-full h-full object-cover mix-blend-overlay' src={estudiantes} alt="/" />
             </div>
             
@@ -15,10 +15,10 @@ const Students = () => {
 
                 <div className='px-4 py-12'>
                     <h2 className='text-5xl font-Montserrat py-6 text-center'>EL BANCO DEL ESTUDIANTE</h2>
-                    <h3 className='text-2xl pt-8 text-slate-300 text-center'>En el banco universitario, queremos brindarte una mano amiga, sabemos lo complicada que es la vida del estudiante, por eso esta es la plataforma ideal para ti…</h3>
+                    <h3 className='text-2xl pt-4 text-slate-300 text-center'>En el banco universitario, queremos brindarte una mano amiga, sabemos lo complicada que es la vida del estudiante, por eso esta es la plataforma ideal para ti…</h3>
                 </div>
       
-                <div className='grid grid-cols-1 lg:grid-cols-3 relative gap-x-8 gap-y-16 px-4 pt-12 sm:pt-20 text-black'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 relative gap-x-8 gap-y-16 px-4 pt-8 sm:pt-1 text-black'>
                     <div className='bg-white rounded-xl shadow-2xl'>
                         <div className='p-8'>
                             <CurrencyDollarIcon className='w-16 p-4 bg-secondary text-white rounded-lg mt-[-4rem]' />
