@@ -6,20 +6,20 @@ import {ArrowLeftIcon, ArrowRightIcon, StarIcon} from "@heroicons/react/24/outli
 const Slider = () => {
   const slides = [
     {
-      url: '',
+      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/laptop.png?raw=true',
     },
     {
-      url: 'https://www.moneysavingexpert.com/content/dam/mse/editorial-image-library/guide-images/hero-how-do-credit-cards-work.jpg',
+      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/mujer.jpg?raw=true',
     },
     {
-      url: '',
+      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/home1.png?raw=true',
     },
 
     {
-      url: 'https://moving2canada.com/wp-content/uploads/2023/05/20230509internationalstudent-1024x538.jpg',
+      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/tdcc.png?raw=true',
     },
     {
-      url: 'https://media.marketrealist.com/brand-img/eNYG0JQuw/0x0/is-mobile-banking-safe-1674499182205.jpg',
+      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/tecno.jpg?raw=true',
     },
   ];
 
