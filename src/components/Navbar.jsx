@@ -38,7 +38,6 @@ const Navbar = () => {
 
             </div>
 
-
             <ul className={!nav ? "hidden" : "absolute bg-zinc-50 w-full px-8"}>
 
             <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="one" smooth={true} duration={500}>Servicios</Link></li>
@@ -51,8 +50,7 @@ const Navbar = () => {
                     <button className="px-8 py-3">Acceso</button>
                 </div>
             </ul>
-
-
+            
         </div>
 
     )
