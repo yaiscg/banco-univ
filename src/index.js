@@ -1,11 +1,66 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Home from './pages/Home';
+import Servicios from './pages/Servicios';
+import Cuentas from './pages/Cuentas';
+import Becas from './pages/Becas';
+import Valores from './pages/Valores';
+import Transferencias from './pages/Transferencias';
+import Cliente from './pages/Cliente';
+import IniciarSesion from './pages/IniciarSesion';
+import Registro from './pages/Registro';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+    errorElement: <h1>Error</h1>
+  },
+  {
+    path: "/servicios",
+    element: <Servicios />,
+  },
+  {
+    path: "/cuentas",
+    element: <Cuentas />,
+  }, 
+  {
+    path: "/becas",
+    element: <Becas />,
+  }, 
+  {
+    path: "/valores",
+    element: <Valores />,
+  }, 
+  {
+    path: "/transferencias",
+    element: <Transferencias />,
+  }, 
+  {
+    path: "/cliente",
+    element: <Cliente />,
+  }, 
+  {
+    path: "/inicio",
+    element: <IniciarSesion />,
+  },
+  {
+    path: "/registro",
+    element: <Registro />,
+  }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <>
+    <React.StrictMode>
+      {/* <App /> */}
+      <RouterProvider router={router}/>
+    </React.StrictMode>
+    <ToastContainer/>
+  </>
 );
