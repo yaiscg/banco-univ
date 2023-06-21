@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import login from "../assets/login.jpg";
-import {RiMailLine, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
+import {RiUser3Line, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
 import { toast } from "react-toastify";
 
 
 const Registro = () => {
 
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
+  const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
   const handleShowPassword = () => {
@@ -18,7 +18,7 @@ const Registro = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    if([email, password].includes("")){
+    if([user, password].includes("")){
       toast.error("Todos los campos son obligatorios", {
         theme: "dark",
         position: "top-center"
@@ -46,13 +46,13 @@ const Registro = () => {
             <span className="  font-light text-gray-600 mb-8 text-xl">Por favor ingresa tus datos</span>
           <form onSubmit={handleSubmit}>
             <div className="relative py-4">
-              <RiMailLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
+              <RiUser3Line className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
-                type="email"
+                type="text"
                 className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg"
-                placeholder="Correo electrónico"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Usuario"
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
               />
             </div>
             <div className="relative py-4">
