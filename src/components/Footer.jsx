@@ -25,10 +25,14 @@ const Footer = () => {
             <div>
                 <h6 className='font-bold pt-2 font-Montserrat'>Nosotros</h6>
                 <ul>
-                    <li className='py-1'>Historia</li>
+                    <li className='py-1'>
+                    <Link to={"/historia"}>Historia</Link>
+                    </li>
+
                     <li className='py-1'>
                         <Link to={"/valores"}>Valores</Link>
                     </li>
+
                     <li className='py-1'>Sala de prensa</li>
 
                 </ul>

@@ -10,7 +10,7 @@ module.exports = {
           primary: "#085f63",
           secondary: "#49beb7",
           accent: "#49beb7",
-          backgroud: "#49beb7"
+          backgroud: "#FFFFFF"
         },
       fontFamily: {
           Montserrat: "Montserrat Alternates"

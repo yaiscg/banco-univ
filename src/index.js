@@ -10,6 +10,8 @@ import Transferencias from './pages/Transferencias';
 import Cliente from './pages/Cliente';
 import IniciarSesion from './pages/IniciarSesion';
 import Registro from './pages/Registro';
+import Historia from './pages/Historia';
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -51,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "/registro",
     element: <Registro />,
+  },
+  {
+    path: "/historia",
+    element: <Historia />,
   }
 ]);
 
