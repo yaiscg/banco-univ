@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import React from "react";
 
 const Footer = () => {
@@ -9,16 +11,24 @@ const Footer = () => {
             <div>
                 <h6 className='font-bold pt-2 font-Montserrat'>Estudiantes</h6>
                 <ul>
-                    <li className='py-1'>Servicios prestados</li>
-                    <li className='py-1'>Cuentas</li>
-                    <li className='py-1'>Becas estudiantiles</li>
+                    <li className='py-1'>
+                        <Link to={"/servicios"}>Servicios prestados</Link>
+                    </li>
+                    <li className='py-1'>
+                        <Link to={"/cuentas"}>Cuentas</Link>
+                    </li>
+                    <li className='py-1'>
+                        <Link to={"/becas"}>Becas estudiantiles</Link>
+                    </li>
                 </ul>
             </div>
             <div>
                 <h6 className='font-bold pt-2 font-Montserrat'>Nosotros</h6>
                 <ul>
                     <li className='py-1'>Historia</li>
-                    <li className='py-1'>Valores</li>
+                    <li className='py-1'>
+                        <Link to={"/valores"}>Valores</Link>
+                    </li>
                     <li className='py-1'>Sala de prensa</li>
 
                 </ul>
@@ -28,7 +38,9 @@ const Footer = () => {
                 <ul>
                     <li className='py-1'>Funcionamiento</li>
                     <li className='py-1'>Pago de matrícula</li>
-                    <li className='py-1'>Transferencias sin comisión</li>
+                    <li className='py-1'>
+                        <Link to={"/transferencias"}>Transferencias sin comisión</Link>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -36,7 +48,9 @@ const Footer = () => {
                 <ul>
                     <li className='py-1'>Seguridad</li>
                     <li className='py-1'>Noticias</li>
-                    <li className='py-1'>Atención al Cliente</li>
+                    <li className='py-1'>
+                        <Link to={"/cliente"}>Atención al cliente</Link>
+                    </li>
 
                 </ul>
             </div>

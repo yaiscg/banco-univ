@@ -6,6 +6,8 @@ import {Bars3Icon,UserPlusIcon,XCircleIcon} from "@heroicons/react/24/outline"
 
 import logo from '../assets/logo.png'
 
+import { Link as Link1 } from "react-router-dom";
+
 const Navbar = () => {
 
     const [nav, setNav] = useState(false)
@@ -27,9 +29,13 @@ const Navbar = () => {
                 </div>
 
                 <div className="hidden md:flex pr-4">
-                    <button className="border-none bg-transparent text-black mr-4 text-base">Regístrate</button>
+                    <button className="border-none bg-transparent text-black mr-4 text-base">
+                        <Link1 to={"/registro"}>Registrarse</Link1>
+                    </button>
 
-                    <button className="px-8 py-2 text-base">Acceso</button>
+                    <button className="px-8 py-2 text-base">
+                        <Link1 to={"/inicio"}>Acceso</Link1>
+                    </button>
                 </div>
 
                 <div className="md:hidden mr-4" onClick={handleClick}>
@@ -46,8 +52,12 @@ const Navbar = () => {
             <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="four" smooth={true} offset={-100} duration={500}>Contacto</Link></li>
 
                 <div className="flex flex-col my-4">
-                    <button className="bg-transparent text-primary px-8 py-3 mb-4">Regístrate</button>
-                    <button className="px-8 py-3">Acceso</button>
+                    <button className="bg-transparent text-primary px-8 py-3 mb-4">
+                        <Link1 to={"/registro"}>Registrarse</Link1>
+                    </button>
+                    <button className="px-8 py-3">
+                        <Link1 to={"/inicio"}>Acceso</Link1>
+                    </button>
                 </div>
             </ul>
             
