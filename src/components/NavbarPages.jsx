@@ -17,7 +17,9 @@ const Navbar = () => {
         <div className="w-screen h-[80 px] z-10 bg-zinc-100 fixed drop-shadow-lg mx-auto py-1">
             <div className="px-10 py-2 flex justify-between items-center w-full h-full">
                 <div className="flex items-center">
-                    <h1 className='text-2xl font-bold font-Montserrat mr-4 sm:text-2xl text-primary'><Link to="home" smooth={true} duration={500}>BANCO UNIVERSITARIO</Link></h1>
+                    <h1 className='text-2xl font-bold font-Montserrat mr-4 sm:text-2xl text-primary'>
+                        <Link1 to={"/home"}>BANCO UNIVERSITARIO</Link1>
+                    </h1>
                 </div>
                 <div className="hidden md:flex pr-4">
                     <button className="border-none bg-transparent text-black mr-4 text-base">

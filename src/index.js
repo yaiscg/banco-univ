@@ -11,6 +11,7 @@ import Cliente from './pages/Cliente';
 import IniciarSesion from './pages/IniciarSesion';
 import Registro from './pages/Registro';
 import Historia from './pages/Historia';
+import Prensa from './pages/Prensa';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -57,6 +58,14 @@ const router = createBrowserRouter([
   {
     path: "/historia",
     element: <Historia />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
+  },
+  {
+    path: "/prensa",
+    element: <Prensa />,
   }
 ]);
 
