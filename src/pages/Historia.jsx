@@ -18,7 +18,7 @@ const Historia = () => {
         </div>
 
       <div className='w-full h-full px-4 py-8 bg-zinc-50'>
-            <h2 className='text-5xl font-Montserrat py-4 text-center font-bold text-primary '>Historia</h2>
+            <h2 className='text-5xl font-Montserrat py-4 text-center font-bold text-primary '>Historiaaaaa</h2>
             <h3 className='text-base py-4 px-12 font-Montserrat text-black text-justify'>
             Tenemos 5 años en el mercado, prestando servicios financieros a estudiantes mediante sus sucursales, cajeros electrónicos, y ahora con su banca en línea, donde pueden realizar todas sus transacciones de manera fácil, sencilla y cómoda. El proceso de transformación generado en estos meses, permite hoy al Banco Universitario ofrecer a sus clientes el acceso al Banco a cualquier hora, desde cualquier lugar y de la manera más conveniente, brindando calidad de atención y una amplia y novedosa plataforma digital que facilita la gestión de distintas operaciones.
             </h3>
