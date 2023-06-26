@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
-import login from "../assets/login.jpg";
 import {RiUser3Line, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
 import { toast } from "react-toastify";
+
+
 
 
 const Registro = () => {
@@ -45,21 +46,67 @@ const Registro = () => {
             <span className="mb-3 text-4xl font-bold font-Montserrat text-primary">Banca en Línea</span>
             <span className="  font-light text-gray-600 mb-8 text-xl">Por favor ingresa tus datos</span>
           <form onSubmit={handleSubmit}>
+
+
+            <div className="grid grid-cols-2 gap-5">
+              <div className="py-4">
+                <input
+                  type="text"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  placeholder="Nombres"
+                />
+              </div>
+              <div className="py-4">
+                <input
+                  type="text"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  placeholder="Apellidos"
+                />
+              </div>
+            </div>
+
+            
+          <div className="grid grid-cols-2 gap-5">
+              <div className="py-4">
+                <input
+                  type="text"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  placeholder="Cédula"
+                />
+              </div>
+              <div className="py-4">
+                <input
+                  type="text"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  placeholder="Fecha de nacimiento"
+                />
+              </div>
+            </div>
+
+            <div className="py-4">
+              <input
+                type="text"
+                className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                placeholder="Número de cuenta"
+              /> 
+            </div>
+
             <div className="relative py-4">
               <RiUser3Line className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
                 type="text"
-                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg"
+                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
                 placeholder="Usuario"
                 value={user}
                 onChange={(e) => setUser(e.target.value)}
               />
             </div>
+
             <div className="relative py-4">
               <RiLockLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
                 type={showPassword ? "text" : "password"}
-                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg"
+                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
                 placeholder="Contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -70,12 +117,36 @@ const Registro = () => {
               ) : ( <RiEyeLine onClick={handleShowPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:cursor-pointer"/>
             )}
             </div>
+
+            <div className="relative py-4">
+              <RiLockLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
+              <input
+                type={showPassword ? "text" : "password"}
+                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
+                placeholder="Repetir contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              /> 
+              {showPassword ? (
+                <RiEyeOffLine onClick={handleShowPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:cursor-pointer"/>
+
+              ) : ( <RiEyeLine onClick={handleShowPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:cursor-pointer"/>
+            )}
+            </div>
+
+
           <div className="flex justify-between w-full py-2">
         </div>
         <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-          Iniciar sesión
+          Registrarse
         </button>
         </form>
+        <div className="text-center text-gray-400">
+          ¿Ya tienes cuenta? 
+          <span className="font-bold text-primary"> 
+            <Link to={"/inicio"}> Inicia sesión</Link>
+          </span>
+        </div>
       </div>
       </div>
     </div>
