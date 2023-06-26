@@ -2,8 +2,6 @@ import React from "react";
 
 import telefono from "../assets/telefono.png"
 
-import { HandThumbUpIcon, LockClosedIcon, HeartIcon} from '@heroicons/react/24/outline'
-
 const About = () => {
     return (
         <div name="three" className="w-full bg-zinc-50 flex flex-col justify-between">

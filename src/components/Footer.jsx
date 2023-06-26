@@ -42,7 +42,9 @@ const Footer = () => {
             <div>
                 <h6 className='font-bold pt-2 font-Montserrat'>Banca en línea</h6>
                 <ul>
-                    <li className='py-1'>Funcionamiento</li>
+                    <li className='py-1'>
+                        <Link to={"/banca"}>Conocela</Link>
+                    </li>
                     <li className='py-1'>Pago de matrícula</li>
                     <li className='py-1'>
                         <Link to={"/transferencias"}>Transferencias sin comisión</Link>

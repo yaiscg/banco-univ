@@ -1,12 +1,14 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import NavbarPages from '../components/NavbarPages'
 import Footer from '../components/Footer'
 import FooterLine from '../components/FooterLine'
+
 
 const Becas = () => {
   return (
     <div className="Becas">
-      <Navbar />
+      <NavbarPages />
+
       <Footer />
       <FooterLine />
     </div>
