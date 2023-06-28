@@ -25,7 +25,7 @@ const Banca = () => {
       </div>
 
       <div className='w-full py-2 bg-primary'>
-            <h2 className='text-4xl font-Montserrat py-4 text-center font-bold text-white '>Conoce nuestra Banca en Línea</h2>
+            <h2 className='text-4xl font-Montserrat py-4 text-center font-bold text-white '>Nuestra Banca en Línea</h2>
             <div className='grid md:grid-cols-2 max-w-[1240px] m-auto'>
               <div className='flex flex-col justify-center md:items-start w-full px-12'>
                 <h3 className='text-center font-Montserrat font-bold text-white'>Un servicio en línea rápido y seguro.</h3>
@@ -93,8 +93,6 @@ const Banca = () => {
           <div className='text-center py-4'>
             <button className="py-3 px-6 sm:w-[20%] my-2"><Link to={"/servicios"}>Conoce otros servicios</Link></button>
           </div>
-
-          
 
         </div>
 

@@ -13,6 +13,7 @@ import Registro from './pages/Registro';
 import Historia from './pages/Historia';
 import Prensa from './pages/Prensa';
 import Banca from './pages/Banca';
+import Pagos from './pages/Pagos';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
   {
     path: "/banca",
     element: <Banca />,
+  },
+  {
+    path: "/pagos",
+    element: <Pagos />,
   }
 ]);
 

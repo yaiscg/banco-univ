@@ -45,7 +45,11 @@ const Footer = () => {
                     <li className='py-1'>
                         <Link to={"/banca"}>Conocela</Link>
                     </li>
-                    <li className='py-1'>Pago de matrícula</li>
+                    
+                    <li className='py-1'>
+                        <Link to={"/pagos"}>Pago de Matrícula</Link>
+                    </li>
+
                     <li className='py-1'>
                         <Link to={"/transferencias"}>Transferencias sin comisión</Link>
                     </li>
