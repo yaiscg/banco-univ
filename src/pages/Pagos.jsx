@@ -32,13 +32,13 @@ const Home = () => {
                 </div>
 
                 <div className='px-16'>
-                    <div className="md:flex pr-4">
-                    <FcFlashOn className="w-10 text-primary text-6xl"/>
+                    <div className="md:flex pr-4 ">
+                    <FcFlashOn className="w-10 text-6xl"/>
                     <h2 className='px-2 py-4 font-Montserrat text-black text-xl'>Rápidez</h2>
                     </div>
 
                     <div className="md:flex pr-4">
-                    <FcReadingEbook className="w-10 text-primary text-6xl"/>
+                    <FcReadingEbook className="w-10 text-6xl"/>
                     <h3 className='px-2 py-4 font-Montserrat text-black text-xl'>Comodidad</h3>
                     </div>
 
