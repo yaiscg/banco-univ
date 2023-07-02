@@ -28,28 +28,28 @@ const Cliente = () => {
         <h2 className='py-4'>¡Te queremos escuchar!</h2>
       </div>
 
-      <div className='bg-white '>
+      <div className='bg-white w-full'>
         <h2 className='font-Montserrat text-center py-4 text-2xl text-primary'>Síguenos a través de nuestras redes sociales:</h2>
 
         <div className='grid md:grid-cols-3 px-2 text-center'>
 
-              <div className='w-full shadow-xl flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300 bg-blue-100'>
-                <BsFacebook className='text-6xl text-blue-700 mx-auto'/>
-                <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Facebook</h2>
-                <h2 className='text-xl font-Montserrat text-primary text-center py-2'>@bancouniversitariove</h2>
-                </div>
+          <div className='w-full shadow-xl flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300 bg-blue-100'>
+            <BsFacebook className='text-6xl text-blue-700 mx-auto'/>
+            <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Facebook</h2>
+            <h2 className='text-xl font-Montserrat text-primary text-center py-2'>@bancouniversitariove</h2>
+          </div>
 
-                <div className='w-full shadow-xl bg-rose-50 flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300'>
-                <BsInstagram className='text-6xl text-pink-600 mx-auto'/>
-                <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Instagram</h2>
-                  <h2 className='text-xl font-Montserrat text-primary text-center py-2'>@bancouniversitariove</h2>
-                </div>
+          <div className='w-full shadow-xl bg-rose-50 flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300'>
+            <BsInstagram className='text-6xl text-pink-600 mx-auto'/>
+            <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Instagram</h2>
+            <h2 className='text-xl font-Montserrat text-primary text-center py-2'>@bancouniversitariove</h2>
+          </div>
 
-                <div className='w-full shadow-xl bg-blue-100 flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300'>
-                  <BsTwitter className='text-6xl text-blue-400 mx-auto'/>
-                  <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Twitter</h2>
-                  <h2 className='text-xl font-Montserrat text-primary text-center py-2'>@bancouniversitariove</h2>
-                </div>
+          <div className='w-full shadow-xl bg-blue-100 flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300'>
+            <BsTwitter className='text-6xl text-blue-400 mx-auto'/>
+            <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Twitter</h2>
+            <h2 className='text-xl font-Montserrat text-primary text-center py-2'>@bancouniversitariove</h2>
+          </div>
 
         </div>
 
