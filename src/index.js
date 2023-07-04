@@ -12,6 +12,10 @@ import IniciarSesion from './pages/IniciarSesion';
 import Registro from './pages/Registro';
 import Historia from './pages/Historia';
 import Prensa from './pages/Prensa';
+import Banca from './pages/Banca';
+import Pagos from './pages/Pagos';
+import Seguridad from './pages/Seguridad';
+import Preguntas from './pages/Preguntas';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -66,6 +70,22 @@ const router = createBrowserRouter([
   {
     path: "/prensa",
     element: <Prensa />,
+  },
+  {
+    path: "/banca",
+    element: <Banca />,
+  },
+  {
+    path: "/pagos",
+    element: <Pagos />,
+  },
+  {
+    path: "/seguridad",
+    element: <Seguridad />,
+  },
+  {
+    path: "/preguntas",
+    element: <Preguntas />,
   }
 ]);
 

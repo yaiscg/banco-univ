@@ -42,8 +42,14 @@ const Footer = () => {
             <div>
                 <h6 className='font-bold pt-2 font-Montserrat'>Banca en línea</h6>
                 <ul>
-                    <li className='py-1'>Funcionamiento</li>
-                    <li className='py-1'>Pago de matrícula</li>
+                    <li className='py-1'>
+                        <Link to={"/banca"}>Conocela</Link>
+                    </li>
+                    
+                    <li className='py-1'>
+                        <Link to={"/pagos"}>Pago de Matrícula</Link>
+                    </li>
+
                     <li className='py-1'>
                         <Link to={"/transferencias"}>Transferencias sin comisión</Link>
                     </li>
@@ -52,10 +58,14 @@ const Footer = () => {
             <div>
                 <h6 className='font-bold pt-2 font-Montserrat'>De interés</h6>
                 <ul>
-                    <li className='py-1'>Seguridad</li>
-                    <li className='py-1'>Noticias</li>
+                    <li className='py-1'>
+                        <Link to={"/seguridad"}>Seguridad</Link>
+                    </li>
                     <li className='py-1'>
                         <Link to={"/cliente"}>Atención al cliente</Link>
+                    </li>
+                    <li className='py-1'>
+                        <Link to={"/preguntas"}>Preguntas frecuentes</Link>
                     </li>
 
                 </ul>
