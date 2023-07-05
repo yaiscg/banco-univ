@@ -36,7 +36,7 @@ const Servicios = () => {
             </div>
       </div>
 
-      <div className='w-full py-[2rem] px-24 bg-secondary'>
+      <div className='w-full py-[2rem] px-4 lg:px-24 bg-secondary'>
 
             <div className='max-w-[1240px] mx-auto gap-8'>
 

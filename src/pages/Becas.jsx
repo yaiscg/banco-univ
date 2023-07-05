@@ -23,13 +23,13 @@ const Becas = () => {
         <h1 className='text-white font-Montserrat text-4xl'>Becas Estudiantiles</h1>
       </div>
 
-      <div className='bg-white w-full py-8 px-24'>
+      <div className='bg-white w-full py-8 px-4 lg:px-24'>
 
         <h1 className='text-primary text-2xl font-Montserrat text-center'> Comprometidos con la educación y el futuro social.</h1>
         <p className='py-4 px-8 text-lg font-Montserrat text-justify'>El banco universitario permite a los estudiantes cobrar sus becas a través de él, ya se retirando en efectivo en los cajeros o sucursales, o a través de la banca en línea pueden verificar que la beca ha sido depositada y realizar sus respectivas transacciones. Con esta ilusión y compromiso, colaboramos activamente en distintos programas de formación de alto valor con nuestro programa de BECAS BANCO UNIVERSITARIO, con el objetivo de impulsar el acceso al conocimiento.</p>
       </div>
 
-      <div className='grid md:grid-cols-2 gap-8 place-items-center py-6 px-12 font-Montserrat bg-secondary'>
+      <div className='grid md:grid-cols-2 gap-8 place-items-center py-6 px-12 font-Montserrat bg-secondary items-center justify-center'>
 
         <div className='text-justify'>
             <div className="font-bold sm:text-[1.5rem] text-[1.5rem] mb-5 text-primary">
@@ -58,7 +58,7 @@ const Becas = () => {
             <h2 className='text-4xl font-Montserrat text-center'>Pasos generales para obtener una Beca Universitaria</h2>
           </div>
 
-          <div className='grid grid-cols-3 place-items-center px-12 font-Montserrat'>
+          <div className='grid grid-cols-3 place-items-center px-12 font-Montserrat '>
             
             <div></div>
 
