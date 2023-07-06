@@ -4,8 +4,6 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 import {Bars3Icon,UserPlusIcon,XCircleIcon} from "@heroicons/react/24/outline"
 
-import logo from '../assets/logo.png'
-
 import { Link as Link1 } from "react-router-dom";
 
 const Navbar = () => {
@@ -38,8 +36,8 @@ const Navbar = () => {
                     </button>
                 </div>
 
-                <div className="md:hidden mr-4" onClick={handleClick}>
-                    {!nav ? <Bars3Icon className="w-5" /> : <XCircleIcon className="w-5" />}
+                <div className="md:hidden mr-4 py-2" onClick={handleClick}>
+                    {!nav ? <Bars3Icon className="w-8 text-primary" /> : <XCircleIcon className="w-8 text-primary" />}
                 </div>
 
             </div>

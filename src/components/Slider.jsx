@@ -3,23 +3,28 @@ import { RxDotFilled } from 'react-icons/rx';
 
 import {ArrowLeftIcon, ArrowRightIcon, StarIcon} from "@heroicons/react/24/outline"
 
+import laptopImage from '../assets/laptop.png';
+import mujerImage from '../assets/mujer.jpg';
+import homeImage from '../assets/home1.png';
+import tdccImage from '../assets/tdcc.png';
+import tecnoImage from '../assets/tecno.jpg';
+
 const Slider = () => {
   const slides = [
     {
-      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/laptop.png?raw=true',
+      url: laptopImage,
     },
     {
-      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/mujer.jpg?raw=true',
+      url: mujerImage,
     },
     {
-      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/home1.png?raw=true',
-    },
-
-    {
-      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/tdcc.png?raw=true',
+      url: homeImage,
     },
     {
-      url: 'https://github.com/yaiscg/banco-univ/blob/main/src/assets/tecno.jpg?raw=true',
+      url: tdccImage,
+    },
+    {
+      url: tecnoImage,
     },
   ];
 
@@ -42,7 +47,7 @@ const Slider = () => {
   };
   
   return (
-    <div name="home" className="max-w-[1400px] h-[640px] w-full m-auto py-16 px-4 relative group bg-zinc-50">
+    <div name="home" className="max-w-[1400px] h-[640px] w-full m-auto py-20 px-4 relative group bg-zinc-50">
       <div 
         style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500"

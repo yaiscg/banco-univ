@@ -21,7 +21,7 @@ const Cliente = () => {
         <h1 className='text-white font-Montserrat text-4xl'>Atención al cliente</h1>
       </div>
 
-      <div className='w-full text-justify py-4 px-24 font-Montserrat'>
+      <div className='w-full text-justify py-4 px-24 font-Montserrat text-lg'>
         <p className='py-6'>Ponemos a tu disposición nuestro buzón: info@bancouniversitario.com.ve y el servicio de atención telefónica las 24 horas del día a través del +58 212-555-5555 donde puedes realizar consultas, solicitudes y reclamos. </p>
         <p className='py-4'>Tus comentarios y sugerencias son importantes para nosotros, ya que nos ayudan a la optimización de nuestro proceso de atención inspirado en el compromiso que tenemos con cada uno de los estudiantes venezolanos.</p>
         <h1 className='py-4'>También tenemos para ti nuestro Fax: +58 212-555-5556</h1>
@@ -29,7 +29,7 @@ const Cliente = () => {
       </div>
 
       <div className='bg-white w-full'>
-        <h2 className='font-Montserrat text-center py-4 text-2xl text-primary'>Síguenos a través de nuestras redes sociales:</h2>
+        <h2 className='font-Montserrat text-center py-4 text-2xl px-4 text-primary'>Síguenos a través de nuestras redes sociales:</h2>
 
         <div className='grid md:grid-cols-3 px-2 text-center'>
 

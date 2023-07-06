@@ -12,7 +12,7 @@ const Preguntas = () => {
     <div className="preguntas">
       <NavbarPages />
 
-      <div className='w-full'>
+      <div className='w-full h-full'>
 
         <div className='w-full h-[300px] absolute'>
           <img className='w-full h-full object-cover mix-blend-overlay' src={pregunta} alt="/" />
@@ -27,7 +27,7 @@ const Preguntas = () => {
 
       </div>
 
-      <div className='bg-white'>
+      <div className='bg-white px-12'>
         <div className="text-center my-4 px-8 text- font-Montserrat">
           Consulta las preguntas que te ayudarán a aclarar alguna duda sobre un producto o servicio mediante respuestas rápidas y puntuales.
         </div>

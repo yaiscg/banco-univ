@@ -28,7 +28,7 @@ const Home = () => {
             <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
             
                 <div className='pt-2 text-center'>
-                    <h1 className='text-3xl font-Montserrat py-2 text-primary font-bold'>Ahora puedes pagar tu matrícula en línea…</h1>
+                    <h1 className='text-3xl font-Montserrat py-2 px-4 text-primary font-bold'>Ahora puedes pagar tu matrícula en línea…</h1>
                     <div className='text-justify py-4 px-8'>
                     <p className='text-xl'>Gracias a la Banca en línea, puedes pagar tu matricula estudiantil de forma rápida y sencilla, este servicio está disponible las 24 horas del día, por lo que puedes pagar en el momento que desees y necesites. </p>
                     <h2 className='font-Montserrat py-6 text-primary text-xl'>¡Estamos para hacerte la vida más fácil!</h2>

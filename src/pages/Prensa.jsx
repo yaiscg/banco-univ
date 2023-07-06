@@ -19,7 +19,7 @@ const Prensa = () => {
         <h2 className='text-5xl font-Montserrat py-4 text-center font-bold text-primary '>Sala de Prensa</h2>
       </div>
 
-      <div className='w-full px-16 py-8 mx-auto grid md:grid-cols-2 bg-zinc-50'>
+      <div className='w-full px-16 py-8 mx-auto grid md:grid-cols-2 bg-zinc-50 text-lg'>
         <h1 className='border-b border-black text-center px-2 py-4'>Fecha</h1>
         <h1 className='border-b border-black text-center px-2 py-4'>Descripción</h1>
 

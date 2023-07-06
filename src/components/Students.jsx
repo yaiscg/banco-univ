@@ -13,7 +13,7 @@ const Students = () => {
             
             <div className='max-w-[1240px] mx-auto text-white relative'>
 
-                <div className='px-4 py-12'>
+                <div className='px-8 lg:px-24 py-12'>
                     <h2 className='text-5xl font-Montserrat py-6 text-center'>EL BANCO DEL ESTUDIANTE</h2>
                     <h3 className='text-2xl pt-4 text-slate-300 text-center'>En el banco universitario, queremos brindarte una mano amiga, sabemos lo complicada que es la vida del estudiante, por eso esta es la plataforma ideal para ti…</h3>
                 </div>

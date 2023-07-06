@@ -49,7 +49,7 @@ const Cuentas = () => {
 
       <div className='container lg:pt-5'>
         <div className='text-center'>
-          <h2 className='text-primary font-[800] text-[2.4rem] mb-5 font-Montserrat'>Beneficios</h2>
+          <h2 className='text-primary font-[800] text-[2.4rem] mb-5 py-4 font-Montserrat'>Beneficios</h2>
         </div>
 
         <div className='flex flex-col justify-center sm:py-12 text-center'>
@@ -81,7 +81,7 @@ const Cuentas = () => {
                   <div className='flex items-center flex-col sm:flex-row'>
                     <div className='flex justify-end w-full mx-auto items-center'>
                       <div className='w-full sm:w-1/2 sm:pl-8'>
-                        <div data-aos="fade-left" data-aos-delay="50" data-aos-duration="1300" className='bg-blue-100 p-4 rounded shadow group hover:bg-primary cursor-pointer ease-in duration-150'>
+                        <div data-aos="fade-left" data-aos-duration="1300" className='bg-blue-100 p-4 rounded shadow group hover:bg-primary cursor-pointer ease-in duration-150'>
                           <BiMoneyWithdraw className='text-5xl text-primary group-hover:text-white mx-auto'/>
                           <h3 className='text-primary font-Montserrat text-lg group-hover:text-white group-hover:font-[600]'>Puedes cobrar tu beca sin asistir al banco</h3>
                         </div>

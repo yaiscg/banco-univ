@@ -18,7 +18,7 @@ const Valores = () => {
 
       <div className='w-full px-4 py-2 bg-zinc-50'>
             <h2 className='text-5xl font-Montserrat py-4 text-center font-bold text-primary '>Valores</h2>
-            <h3 className='text-base py-2 font-Montserrat text-black text-center'>Somos una entidad financiera dirigida especialmente a los estudiantes, ya que contamos con alianzas con las universidades más reconocidas del país, brindando un servicio de primera. Queremos ayudarte en la gestión de tus recursos económicos, de manera sencilla y segura.</h3>
+            <h3 className='text-lg py-2 font-Montserrat text-black text-center'>Somos una entidad financiera dirigida especialmente a los estudiantes, ya que contamos con alianzas con las universidades más reconocidas del país, brindando un servicio de primera. Queremos ayudarte en la gestión de tus recursos económicos, de manera sencilla y segura.</h3>
       </div>
 
       <div className='w-full px-4 py-12 bg-accent'>
@@ -27,14 +27,14 @@ const Valores = () => {
             
             <div className='pt-2 text-center'>
               <h1 className='text-5xl font-Montserrat py-2 text-primary font-bold'>Misión</h1>
-              <div className='text-justify py-4 px-8'>
+              <div className='text-justify py-4 px-8 text-lg'>
                 <p>Somos una institución financiera comprometida con los estudiantes universitarios, brindando soluciones financieras ágiles y eficientes. Nuestra misión es facilitar la gestión de sus recursos y contribuir al crecimiento económico y personal de nuestros clientes.</p>
               </div>
             </div>
 
             <div className='pt-2 text-center'>
               <h1 className='text-5xl font-Montserrat py-2 text-primary font-bold'>Visión</h1>
-              <div className="text-justify py-4 px-8">
+              <div className="text-justify py-4 px-8 text-lg">
                 <p>Queremos ser la mejor opción financiera para estudiantes universitarios en el país. Deseamos ser reconocidos por nuestros servicios innovadores, la calidad de atención al cliente y nuestro compromiso con la educación y el desarrollo social.</p>
               </div>
             </div>
@@ -45,7 +45,7 @@ const Valores = () => {
       <div className='w-full bg-zinc-50 py-12'>
           <h1 className='text-5xl font-Montserrat py-4 text-primary font-bold text-center '>Objetivos</h1>
           
-          <div className='px-16 text-justify'>
+          <div className='px-16 text-justify text-lg'>
 
             <div className="md:flex pr-4">
               <BsCheck2Circle className="w-10 text-primary text-6xl"/>

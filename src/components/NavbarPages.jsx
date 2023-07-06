@@ -32,7 +32,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="md:hidden mr-4" onClick={handleClick}>
-                    {!nav ? <Bars3Icon className="w-5" /> : <XCircleIcon className="w-5" />}
+                    {!nav ? <Bars3Icon className="w-8 text-primary" /> : <XCircleIcon className="w-8 text-primary" />}
                 </div>
 
             </div>

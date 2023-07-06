@@ -3,17 +3,20 @@ import { Link } from "react-router-dom";
 import {RiUser3Line, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
 import { toast } from "react-toastify";
 
-
-
-
 const Registro = () => {
 
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleShowPassword = () => {
     setShowPassword (!showPassword);
+  };
+
+  const handleShowConfirmPassword = () => {
+    setShowConfirmPassword (!showConfirmPassword);
   };
 
   const handleSubmit = (e) => {
@@ -38,7 +41,7 @@ const Registro = () => {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+     <div className="bg-[url('/src/assets/registro.jpg')] bg-no-repeat bg-cover bg-center bg-fixed flex items-center justify-center min-h-screen">
       <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
         {/* left side */}
         <div className="flex flex-col justify-center p-8 md:p-14">
@@ -121,19 +124,26 @@ const Registro = () => {
             <div className="relative py-4">
               <RiLockLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
-                type={showPassword ? "text" : "password"}
+                type={showConfirmPassword ? "text" : "password"}
                 className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
                 placeholder="Repetir contraseña"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               /> 
-              {showPassword ? (
-                <RiEyeOffLine onClick={handleShowPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:cursor-pointer"/>
+              {showConfirmPassword ? (
+                <RiEyeOffLine onClick={handleShowConfirmPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:cursor-pointer"/>
 
-              ) : ( <RiEyeLine onClick={handleShowPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:cursor-pointer"/>
+              ) : ( <RiEyeLine onClick={handleShowConfirmPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:cursor-pointer"/>
             )}
             </div>
-
+              
+            <div className="grid">
+              <span className="  font-bold text-gray-600 text-sm">Tu contraseña debe cumplir con estos requisitos:</span>
+              <span className="  font-light text-gray-600 text-sm">• Tener 8 caracteres</span>
+              <span className="  font-light text-gray-600 text-sm">• Ser alfanumérica con al menos 1 caracter numérico y un único caracter especial</span>
+              <span className="  font-light text-gray-600 text-sm">• Tener uno de estos caracteres especiales - / = . $ # </span>
+              <span className="  font-light text-gray-600 text-sm">• Evitar colocar información personal </span>
+            </div>
 
           <div className="flex justify-between w-full py-2">
         </div>
@@ -145,6 +155,11 @@ const Registro = () => {
           ¿Ya tienes cuenta? 
           <span className="font-bold text-primary"> 
             <Link to={"/inicio"}> Inicia sesión</Link>
+          </span>
+        </div>
+        <div className='mt-10 text-center text-base'>
+          <span className="font-light text-primary"> 
+            <Link to={"/home"}> Volver a home</Link>
           </span>
         </div>
       </div>

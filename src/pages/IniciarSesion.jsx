@@ -38,6 +38,7 @@ const IniciarSesion = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
+
       <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
         {/* left side */}
         <div className="flex flex-col justify-center p-8 md:p-14">
@@ -71,7 +72,7 @@ const IniciarSesion = () => {
             )}
             </div>
           <div className="flex justify-between w-full py-4">
-            <span className=" text-primary text-md">Olvidé mi contraseña</span>
+            <span className=" text-primary text-md"><Link to={"/olvido"}>Olvidé mi usuario o contraseña</Link></span>
         </div>
         <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
           Iniciar sesión
@@ -83,6 +84,13 @@ const IniciarSesion = () => {
             <Link to={"/registro"}> Regístrate</Link>
           </span>
         </div>
+
+        <div className='mt-10 text-center text-base'>
+          <span className="font-light text-primary"> 
+            <Link to={"/home"}> Volver a home</Link>
+          </span>
+        </div>
+      
       </div>
         {/* right side */}
         <div className="relative">
@@ -93,7 +101,9 @@ const IniciarSesion = () => {
         />
         </div>
       </div>
+
     </div>
+
   );
 };
 

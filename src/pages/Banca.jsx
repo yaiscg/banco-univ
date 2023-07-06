@@ -28,9 +28,9 @@ const Banca = () => {
             <h2 className='text-4xl font-Montserrat py-4 text-center font-bold text-white '>Nuestra Banca en Línea</h2>
             <div className='grid md:grid-cols-2 max-w-[1240px] m-auto'>
               <div className='flex flex-col justify-center md:items-start w-full px-12'>
-                <h3 className='text-center font-Montserrat font-bold text-white'>Un servicio en línea rápido y seguro.</h3>
-                <p className='text-justify my-4 text-white'> Con nuestra banca en línea consulta tu saldo y realiza tus transacciones por internet, en donde te encuentres y a la hora que desees, siendo esta una plataforma fácil de manejar, intuitiva y segura. Ahora solo necesitas un dispositvo y acceso a internet, para realizar transferencias a terceros y muchas cosas más...</p>
-                <button className="py-3 px-6 sm:w-[40%] my-2 bg-secondary border-secondary"><Link to={"/inicio"}>Unete ahora</Link></button>
+                <h3 className='text-center font-Montserrat text-lg font-bold text-white'>Un servicio en línea rápido y seguro.</h3>
+                <p className='text-justify my-4 text-lg text-white'> Con nuestra banca en línea consulta tu saldo y realiza tus transacciones por internet, en donde te encuentres y a la hora que desees, siendo esta una plataforma fácil de manejar, intuitiva y segura. Ahora solo necesitas un dispositvo y acceso a internet, para realizar transferencias a terceros y muchas cosas más...</p>
+                <button className="py-3 px-6 sm:w-[40%] my-2 bg-secondary border-secondary hover:text-secondary hover:bg-zinc-100"><Link to={"/registro"}>Únete ahora</Link></button>
               </div>
 
               <div className='m-auto w-60 px-8 py-8 my-6'>
@@ -41,10 +41,10 @@ const Banca = () => {
       </div>
 
       <div className=' bg-white w-full my-12'>
-        <div className='max-w-[1240px] mx-auto'>
+        <div className='max-w-[1240px] mx-auto lg:px-8'>
           <div className='text-center'>
             <h2 className='text-4xl font-Montserrat text-primary'>El Banco Universitario en la palma de tu mano</h2>
-            <p className='py-6 text-gray-500 font-Montserrat'>Ahora todos nuestros servicios los puedes encontrar en tu dispositivo, ordenador, tablet o móvil.</p>
+            <p className='py-6 text-gray-500 font-Montserrat px-6 text-xl'>Ahora todos nuestros servicios los puedes encontrar en tu dispositivo, ordenador, tablet o móvil.</p>
           </div>
 
           <div className='grid md:grid-cols-5 gap-1 px-2 text-center'>
@@ -52,7 +52,7 @@ const Banca = () => {
               <div className='w-full shadow-xl flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300 bg-teal-50'>
                 <img className='w-20 px-2 py-6 my-2 m-auto' src={menu} alt="/" />
                 <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Menú</h2>
-                    <div className='text-center font-light'>
+                    <div className='text-center font-light text-xl'>
                         <p className='py-2 mx-2 mt-2'>Realiza todas tus operaciones con un solo click al menú.</p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ const Banca = () => {
                 <div className='w-full shadow-xl bg-green-100 flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300'>
                     <img className='w-20 px-2 py-6 my-2 m-auto' src={transferencia} alt="/" />
                     <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Realiza transferencias</h2>
-                    <div className='text-center font-light'>
+                    <div className='text-center font-light text-xl'>
                         <p className='py-2 mx-2 mt-2'>Realiza transferencias a terceros y a tus contactos frecuentes.</p>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ const Banca = () => {
                 <div className='w-full shadow-xl bg-teal-50 flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300'>
                     <img className='w-20 px-2 py-6 my-2 m-auto' src={billetera} alt="/" />
                     <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Consulta tus saldo y movimientos</h2>
-                    <div className='text-center font-light'>
+                    <div className='text-center font-light text-xl'>
                         <p className='py-2 mx-2 mt-2'>Visualiza el monto disponible en tu cuenta y el historico de movimientos.</p>
                     </div>
                 </div>
@@ -76,7 +76,7 @@ const Banca = () => {
                 <div className='w-full shadow-xl bg-green-100 flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300'>
                     <img className='w-20 px-2 py-6 my-2 m-auto' src={agenda} alt="/" />
                     <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Agenda</h2>
-                    <div className='text-center font-light'>
+                    <div className='text-center font-light text-xl'>
                         <p className='py-2 mx-2 mt-2'>Agrega tus contactos frecuentes a la agenda, agrega, edita y elimina.</p>
                     </div>
                 </div>
@@ -84,7 +84,7 @@ const Banca = () => {
                 <div className='w-full shadow-xl bg-teal-50 flex flex-col p-2 my-2 rounded-lg hover:scale-105 duration-300'>
                     <img className='w-20 px-2 py-6 my-2 m-auto' src={perfil} alt="/" />
                     <h2 className='text-xl font-Montserrat text-primary text-center py-2'>Perfil</h2>
-                    <div className='text-center font-light'>
+                    <div className='text-center font-light text-xl'>
                         <p className='py-2 mx-2 mt-2'>Gestiona tus claves, ingresa a tu agenda, visualiza tu información personal, entre otros.</p>
                     </div>
                 </div>

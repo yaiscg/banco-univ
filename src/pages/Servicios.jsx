@@ -25,7 +25,7 @@ const Servicios = () => {
       <div className='w-full py-2 bg-zinc-100'>
             <h2 className='text-4xl font-Montserrat py-4 text-center font-bold text-primary '>Nuestros Servicios</h2>
             <div className='grid md:grid-cols-2 max-w-[1240px] m-auto'>
-              <div className='flex flex-col justify-center md:items-start w-full px-12'>
+              <div className='flex flex-col justify-center md:items-start w-full px-8 text-lg'>
                 <p className='text-justify text-primary font-Montserrat'>Nuestro objetivo es ofrecerles un servicio de calidad, rápido y de alta seguridad, trabajamos todos los días incansablemente para lograrlo; queremos ser la entidad bancaria Nro. 1 de los estudiantes del país, por ellos y para ellos, es que tenemos gran variedad de servicios, físicos y electrónicos, brindándoles comodidad y una gran atención.</p>
               </div>
 
@@ -36,7 +36,7 @@ const Servicios = () => {
             </div>
       </div>
 
-      <div className='w-full py-[2rem] px-24 bg-secondary'>
+      <div className='w-full py-[2rem] px-4 lg:px-24 bg-secondary'>
 
             <div className='max-w-[1240px] mx-auto gap-8'>
 

@@ -24,7 +24,7 @@ const Seguridad = () => {
 
                 <div className='pt-20 text-center'>
                     <h3 className='text-4xl py-4 font-Montserrat font-bold text-white'>Seguridad</h3>
-                    <div className='text-justify py-4 px-12'>
+                    <div className='text-justify py-4 px-12 text-lg'>
                     <p className=' text-white'>Nuestro compromiso es salvaguardar el patrimonio, información y demás activos de nuestros clientes, es por ello, que es tan importante contar con un alto estandar en el sistema de seguridad de nuestra banca.</p>
                     <p className='text-white py-4'>Contamos con un alto nivel de seguridad en nuestra banca en línea, que valida cada inicio de sesión, dispositivo desde el que se inició, tiempo en la aplicación, así como las transacciones realizadas diariamente, para evitar riesgos y posibles estafas. Además contamos con preguntas de seguridad que solamente tú puedes responder.</p>
                     </div>
@@ -42,7 +42,7 @@ const Seguridad = () => {
                 <img src={control} alt="" className="p-4" />
             </div>
 
-            <div className='text-justify'>
+            <div className='text-justify text-xl'>
                 <div className="font-bold sm:text-[1.5rem] text-[1.5rem] mb-5">
                     Tu seguridad es importante<br /> para nosotros,{" "}
                     <span className="text-secondary">por eso te sugerimos tomar en cuenta las siguientes recomendaciones:</span>
@@ -57,9 +57,9 @@ const Seguridad = () => {
         </div>
 
         <div className='bg-blue-100 py-8'>
-            <h1 className='text-center font-Montserrat text-3xl py-4 text-primary font-bold'>Fraudes electrónicos más frecuentes</h1>
+            <h1 className='text-center font-Montserrat text-3xl py-4 px-2 text-primary font-bold'>Fraudes electrónicos más frecuentes</h1>
 
-            <div className='grid md:grid-cols-5 gap-8  py-4 px-12 font-Montserrat text-center'>
+            <div className='grid md:grid-cols-5 gap-8  py-4 px-12 font-Montserrat text-center text-lg'>
                 
                 <div>
                     <img className='w-20 px-2 m-auto' src={callcenter} alt="/" />

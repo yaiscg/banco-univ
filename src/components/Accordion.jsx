@@ -30,7 +30,7 @@ const Accordion = ({ id, title }) => {
                 style={{ overflow: "hidden" }}
                 className="pt-4">
 
-                <p className="text-sm leading-7 text-gray">
+                <p className="text-lg leading-7 text-gray text-justify">
                 Para afiliarte a la Banca en Línea, solamente debes ingresar en el área de “Registrarse”, que se encuentra en la barra superior, completar los datos que le solicitan, y así, ya puede ingresar a la banca.
                 </p>
 
@@ -46,7 +46,7 @@ const Accordion = ({ id, title }) => {
                 style={{ overflow: "hidden" }}
                 className="pt-4">
 
-                <p className="text-sm leading-7 text-gray">
+                <p className="text-lg leading-7 text-gray text-justify">
                 Solo debes ingresar en el área de “Acceso”, posteriormente, darle click a “Olvidé mi contraseña”, llenar los nuevos datos, además de los de verificación y listo, ya puede ingresar con su nueva contraseña.
                 </p>
 
@@ -62,7 +62,7 @@ const Accordion = ({ id, title }) => {
                 style={{ overflow: "hidden" }}
                 className="pt-4">
 
-                <p className="text-sm leading-7 text-gray">
+                <p className="text-lg leading-7 text-gray text-justify">
                 La sede principal queda ubicada en la ciudad de Caracas, Venezuela, específicamente en la Av. Universidad, Edificio Banco Universitario, piso 12.
                 </p>
 
@@ -78,7 +78,7 @@ const Accordion = ({ id, title }) => {
                 style={{ overflow: "hidden" }}
                 className="pt-4">
 
-                <p className="text-sm leading-7 text-gray">
+                <p className="text-lg leading-7 text-gray text-justify">
                 Contamos con el apoyo de las Universidades más prestigiosas del país, como lo es la Universidad Centroccidental Lisandro Alvarado, la Universidad Experimental Politecnica Antonio José de Sucre, la Universidad Central de Venezuela, entre otras. Sin embargo, cualquier estudiante puede unirse al banco universitario, sin importar la Universidad a la que pertenezca.
                 </p>
 
@@ -94,11 +94,11 @@ const Accordion = ({ id, title }) => {
                 style={{ overflow: "hidden" }}
                 className="pt-4">
                 
-                <p className="text-sm leading-7 text-gray">
+                <p className="text-lg leading-7 text-gray text-justify">
                 Click en el Menú - Agenda, posteriormente Click en “Agregar Contacto”, llena los datos y guarda.
                 </p>
 
-                <p className="text-sm leading-7 text-gray py-4">
+                <p className="text-lg leading-7 text-gray py-4">
                 Si estás haciendo una transferencia a un tercero no registrado, luego de que esta se haga, hacer click en “Registrar a contacto frecuente”.
                 </p>
 
