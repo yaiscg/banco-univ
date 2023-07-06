@@ -11,6 +11,38 @@ const Registro = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const [formData, setFormData] = useState({
+    documento:'V',
+  })
+
+  const onChangeHandler = (event) => {
+
+    console.log(event)
+    if (event.target.name === 'languages') {
+
+      let copy = { ...formData }
+
+      if (event.target.checked) {
+        copy.languages.push(event.target.value)
+      } else {
+        copy.languages = copy.languages.filter(el => el !== event.target.value)
+      }
+
+      setFormData(copy)
+
+    } else {
+      setFormData(() => ({
+        ...formData,
+        [event.target.name]: event.target.value
+      }))
+    }
+  }
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault()
+    console.log(formData)
+  }
+
   const handleShowPassword = () => {
     setShowPassword (!showPassword);
   };
@@ -70,13 +102,29 @@ const Registro = () => {
 
             
           <div className="grid grid-cols-2 gap-5">
-              <div className="py-4">
-                <input
-                  type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
-                  placeholder="Cédula"
-                />
+
+            <div className='grid grid-cols-2 '>
+              <div className='col-end-6'>
+                <form onSubmit={onSubmitHandler}>
+                  <div className="form-group py-4">
+                    <select className="form-select border rounded-lg py-3 px-3 text-gray-400" name="documento" onChange={onChangeHandler} value={formData.documento}>
+                      <option value="v">V</option>
+                      <option value="e">E</option>
+                    </select>
+                  </div>
+                </form>
               </div>
+
+                <div className="py-4 col-end-10 px-1">
+                  <input
+                    type="text"
+                    className="py-3 border w-full border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                    placeholder="Cédula"
+                  />
+                </div>
+            </div>
+
+
               <div className="py-4">
                 <input
                   type="text"
