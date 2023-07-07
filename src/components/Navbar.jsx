@@ -42,7 +42,7 @@ const Navbar = () => {
 
             </div>
 
-            <ul className={!nav ? "hidden" : "absolute bg-zinc-50 w-full px-8"}>
+            <ul className={!nav ? "hidden" : "absolute bg-zinc-100 w-full px-8"}>
 
             <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="one" smooth={true} duration={500}>Servicios</Link></li>
             <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="two" smooth={true} offset={-50} duration={500}>Estudiantes</Link></li>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
                 <div className="flex flex-col my-4">
                     <button className="bg-transparent text-primary px-8 py-3 mb-4">
-                        <Link1 to={"/registro"}>Registrarse</Link1>
+                        <Link1 to={"/registro"}>Regístrate</Link1>
                     </button>
                     <button className="px-8 py-3">
                         <Link1 to={"/inicio"}>Acceso</Link1>
