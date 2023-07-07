@@ -28,7 +28,7 @@ const Navbar = () => {
 
                 <div className="hidden md:flex pr-4">
                     <button className="border-none bg-transparent text-black mr-4 text-base">
-                        <Link1 to={"/registro"}>Registrarse</Link1>
+                        <Link1 to={"/registro"}>Regístrate</Link1>
                     </button>
 
                     <button className="px-8 py-2 text-base">

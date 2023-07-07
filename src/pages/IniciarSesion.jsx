@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import login from "../assets/login.jpg";
 import {RiUser3Line, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
@@ -11,7 +11,6 @@ const IniciarSesion = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
-  const [disabled, setDisabled] = useState(true);
 
   const handleShowPassword = () => {
     setShowPassword (!showPassword);
@@ -36,14 +35,6 @@ const IniciarSesion = () => {
       return;
     }
   };
-
-  useEffect(() => {
-    if (user.trim() === '' || password.trim() === '') {
-      setDisabled(true);
-    } else {
-      setDisabled(false);
-    }
-  }, [user, password]);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -83,15 +74,8 @@ const IniciarSesion = () => {
           <div className="flex justify-between w-full py-4">
             <span className=" text-primary text-md"><Link to={"/olvido"}>Olvidé mi usuario o contraseña</Link></span>
             </div>
-            <button
-              className={`w-full text-white py-3 px-6 rounded-lg mb-6 border-secondary ${
-                disabled
-                  ? 'bg-gray-400 border-gray-400 cursor-not-allowed'
-                  : 'bg-secondary border-secondary'
-              }`}
-              disabled={disabled}
-            >
-              Iniciar sesión
+            <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
+            Iniciar sesión
             </button>
         </form>
         <div className="text-center text-gray-400">

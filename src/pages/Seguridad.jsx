@@ -30,7 +30,7 @@ const Seguridad = () => {
                     </div>
                 </div>
 
-                <div className='m-auto w-80 px-8 py-8 my-14'>
+                <div className='m-auto w-80 px-8 py-8 my-18'>
                     <img src={seguridad} alt="/" />
                 </div>
             </div>
