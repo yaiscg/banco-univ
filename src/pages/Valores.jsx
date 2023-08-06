@@ -16,9 +16,17 @@ const Valores = () => {
         <img className='w-full h-full object-cover mix-blend-overlay' src={estudiantes2} alt="/" />
       </div>
 
-      <div className='w-full px-4 py-2 bg-zinc-50'>
-            <h2 className='text-5xl font-Montserrat py-4 text-center font-bold text-primary '>Valores</h2>
-            <h3 className='text-lg py-2 font-Montserrat text-black text-center'>Somos una entidad financiera dirigida especialmente a los estudiantes, ya que contamos con alianzas con las universidades más reconocidas del país, brindando un servicio de primera. Queremos ayudarte en la gestión de tus recursos económicos, de manera sencilla y segura.</h3>
+      <div className='w-full bg-primary text-center py-4'>
+        <h1 className='text-white font-Montserrat text-4xl'>Valores</h1>
+      </div>
+
+      <div className='bg-white w-full py-8 lg:px-16 text-lg font-Montserrat text-justify'>
+        <p className='py-4 px-8'>
+        Somos una entidad financiera dirigida especialmente a los estudiantes, ya que contamos con alianzas con las universidades más reconocidas del país, brindando un servicio de primera. Queremos ayudarte en la gestión de tus recursos económicos, de manera sencilla y segura.
+        </p>
+        <p className='py-2 px-8'>
+        La idea es ser un banco moderno, sostenible y accesible a todos los estudiantes venezolanos, que ofrece una experiencia de servicio cercana y de calidad a sus clientes y usuarios
+        </p>
       </div>
 
       <div className='w-full px-4 py-12 bg-accent'>

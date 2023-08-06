@@ -11,15 +11,15 @@ const Prensa = () => {
     <div className="Prensa">
       <NavbarPages />
 
-      <div className='w-full h-[400px]'>
+      <div className='w-full h-[300px]'>
         <img className='w-full h-full object-cover mix-blend-overlay' src={prensa} alt="/" />
       </div>
 
-      <div className='w-full px-4 py-2 bg-zinc-50'>
-        <h2 className='text-5xl font-Montserrat py-4 text-center font-bold text-primary '>Sala de Prensa</h2>
+      <div className='w-full bg-primary text-center py-4'>
+        <h1 className='text-white font-Montserrat text-4xl'>Sala de Prensa</h1>
       </div>
 
-      <div className='w-full px-16 py-8 mx-auto grid md:grid-cols-2 bg-zinc-50 text-lg'>
+      <div className='w-full px-16 py-8 mx-auto grid md:grid-cols-2 bg-white text-lg'>
         <h1 className='border-b border-black text-center px-2 py-4'>Fecha</h1>
         <h1 className='border-b border-black text-center px-2 py-4'>Descripción</h1>
 

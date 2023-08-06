@@ -18,22 +18,17 @@ const Servicios = () => {
     <div className="Servicios">
       <NavbarPages />
 
-      <div className='w-full h-[335px]'>
+      <div className='w-full h-[300px]'>
         <img className='w-full h-full object-cover mix-blend-overlay' src={cajero} alt="/" />
       </div>
 
-      <div className='w-full py-2 bg-zinc-100'>
-            <h2 className='text-4xl font-Montserrat py-4 text-center font-bold text-primary '>Nuestros Servicios</h2>
-            <div className='grid md:grid-cols-2 max-w-[1240px] m-auto'>
-              <div className='flex flex-col justify-center md:items-start w-full px-8 text-lg'>
-                <p className='text-justify text-primary font-Montserrat'>Nuestro objetivo es ofrecerles un servicio de calidad, rápido y de alta seguridad, trabajamos todos los días incansablemente para lograrlo; queremos ser la entidad bancaria Nro. 1 de los estudiantes del país, por ellos y para ellos, es que tenemos gran variedad de servicios, físicos y electrónicos, brindándoles comodidad y una gran atención.</p>
-              </div>
+      <div className='w-full bg-primary text-center py-4'>
+        <h1 className='text-white font-Montserrat text-4xl'>Nuestros Servicios</h1>
+      </div>
 
-              <div className='m-auto w-80 px-8'>
-                <img src={banca} alt="/" />
-              </div>
-
-            </div>
+      <div className=' bg-white w-full py-8 lg:px-16'>
+          <p className='py-4 px-8 text-xl font-Montserrat text-justify'>Nuestro objetivo es ofrecerles un servicio de calidad, rápido y de alta seguridad, trabajamos todos los días incansablemente para lograrlo; queremos ser la entidad bancaria Nro. 1 de los estudiantes del país, por ellos y para ellos, es que tenemos gran variedad de servicios, físicos y electrónicos, brindándoles comodidad y una gran atención.</p>
+          <h1 className='text-primary text-2xl font-Montserrat text-center'>¡Impulsamos tu destino!</h1>
       </div>
 
       <div className='w-full py-[2rem] px-4 lg:px-24 bg-secondary'>

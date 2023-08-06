@@ -17,8 +17,12 @@ const Historia = () => {
         <img className='w-full h-full object-cover mix-blend-overlay' src={manos} alt="/" />
         </div>
 
-      <div className='w-full h-full px-4 py-8 bg-zinc-50'>
-            <h2 className='text-5xl font-Montserrat py-4 text-center font-bold text-primary '>Historia</h2>
+      <div className='w-full bg-primary text-center py-4'>
+        <h1 className='text-white font-Montserrat text-4xl'>Historia</h1>
+      </div>
+
+
+      <div className='bg-white w-full py-8 lg:px-16'>
             <p className='text-lg py-4 px-12 font-Montserrat text-black text-justify'>
             Tenemos 5 años en el mercado, prestando servicios financieros a estudiantes mediante sus sucursales, cajeros electrónicos, y ahora con su banca en línea, donde pueden realizar todas sus transacciones de manera fácil, sencilla y cómoda. El proceso de transformación generado en estos meses, permite hoy al Banco Universitario ofrecer a sus clientes el acceso al Banco a cualquier hora, desde cualquier lugar y de la manera más conveniente, brindando calidad de atención y una amplia y novedosa plataforma digital que facilita la gestión de distintas operaciones.
             </p>

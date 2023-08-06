@@ -5,30 +5,24 @@ import FooterLine from '../components/FooterLine'
 
 import Accordion from "../components/Accordion";
 
-import pregunta from '../assets/pregunta.png'
+import hombre from '../assets/hombre.jpg'
 
 const Preguntas = () => {
   return (
     <div className="preguntas">
       <NavbarPages />
 
-      <div className='w-full h-full'>
-
-        <div className='w-full h-[300px] absolute'>
-          <img className='w-full h-full object-cover mix-blend-overlay' src={pregunta} alt="/" />
-        </div>
-        
-        <div className='max-w-[1240px] mx-auto text-white relative'>
-          <div className='px-4 py-28'>
-            <h2 className='text-4xl font-Montserrat py-12 text-center'>Preguntas frecuentes</h2>
-          </div>
-
+        <div className='w-full h-[300px]'>
+          <img className='w-full h-full object-cover mix-blend-overlay' src={hombre} alt="/" />
         </div>
 
-      </div>
+        <div className='w-full bg-primary text-center py-4'>
+          <h1 className='text-white font-Montserrat text-4xl'>Preguntas Frecuentes</h1>
+        </div>
+
 
       <div className='bg-white px-12'>
-        <div className="text-center my-4 px-8 text- font-Montserrat">
+        <div className="text-center my-4 py-4 px-8 text-xl font-Montserrat">
           Consulta las preguntas que te ayudarán a aclarar alguna duda sobre un producto o servicio mediante respuestas rápidas y puntuales.
         </div>
         <div className="mt-12 max-w-[700px] mx-auto font-Montserrat text-gray-600">

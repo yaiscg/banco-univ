@@ -15,15 +15,15 @@ const Home = () => {
     <div className="Pagos">
 	    <NavbarPages/>
 
-        <div className='w-full h-[330px]'>
+        <div className='w-full h-[300px]'>
             <img className='w-full h-full object-cover mix-blend-overlay' src={chica} alt="/" />
         </div>
 
-        <div className='w-full bg-primary text-center py-6'>
+        <div className='w-full bg-primary text-center py-4'>
             <h1 className='text-white font-Montserrat text-4xl'>Pago de matrícula</h1>
         </div>
 
-        <div className='w-full px-4 py-12 bg-zinc-100'>
+        <div className='w-full px-4 py-12 bg-white'>
 
             <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
             

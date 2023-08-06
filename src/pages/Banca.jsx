@@ -20,24 +20,21 @@ const Banca = () => {
     <div className="Banca">
       <NavbarPages />
 
-      <div className='w-full h-[335px]'>
+      <div className='w-full h-[300px]'>
         <img className='w-full h-full object-cover mix-blend-overlay' src={banca} alt="/" />
       </div>
 
-      <div className='w-full py-2 bg-primary'>
-            <h2 className='text-4xl font-Montserrat py-4 text-center font-bold text-white '>Nuestra Banca en Línea</h2>
-            <div className='grid md:grid-cols-2 max-w-[1240px] m-auto'>
-              <div className='flex flex-col justify-center md:items-start w-full px-12'>
-                <h3 className='text-center font-Montserrat text-lg font-bold text-white'>Un servicio en línea rápido y seguro.</h3>
-                <p className='text-justify my-4 text-lg text-white'> Con nuestra banca en línea consulta tu saldo y realiza tus transacciones por internet, en donde te encuentres y a la hora que desees, siendo esta una plataforma fácil de manejar, intuitiva y segura. Ahora solo necesitas un dispositvo y acceso a internet, para realizar transferencias a terceros y muchas cosas más...</p>
-                <button className="py-3 px-6 sm:w-[40%] my-2 bg-secondary border-secondary hover:text-secondary hover:bg-zinc-100"><Link to={"/registro"}>Únete ahora</Link></button>
+      <div className='w-full bg-primary text-center py-4'>
+        <h1 className='text-white font-Montserrat text-4xl'>Nuestra Banca en Línea</h1>
+      </div>
+
+      <div className='bg-white w-full py-8 lg:px-16'>
+              <div className='flex flex-col justify-center md:items-center w-full'>
+                <h3 className='text-primary text-xl font-Montserrat text-center py-1'>Un servicio en línea rápido y seguro.</h3>
+                <p className='py-2 px-8 text-lg font-Montserrat text-justify'> Con nuestra banca en línea consulta tu saldo y realiza tus transacciones por internet, en donde te encuentres y a la hora que desees, siendo esta una plataforma fácil de manejar, intuitiva y segura. Ahora solo necesitas un dispositvo y acceso a internet, para realizar transferencias a terceros y muchas cosas más...</p>
+                <button className=" text-center py-2 px-6 sm:w-[30%] bg-secondary border-secondary hover:text-secondary hover:bg-zinc-100"><Link to={"/registro"}>Únete ahora</Link></button>
               </div>
 
-              <div className='m-auto w-60 px-8 py-8 my-6'>
-                <img src={ordenador} alt="/" />
-              </div>
-
-            </div>
       </div>
 
       <div className=' bg-white w-full my-12'>

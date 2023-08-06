@@ -17,7 +17,7 @@ const Cliente = () => {
         <img className='w-full h-full object-cover mix-blend-overlay' src={atencion} alt="/" />
       </div>
 
-      <div className='w-full bg-primary text-center py-6'>
+      <div className='w-full bg-primary text-center py-4'>
         <h1 className='text-white font-Montserrat text-4xl'>Atención al cliente</h1>
       </div>
 

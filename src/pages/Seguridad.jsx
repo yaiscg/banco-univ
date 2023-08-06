@@ -5,6 +5,7 @@ import FooterLine from '../components/FooterLine'
 
 import seguridad from '../assets/seguridad.png'
 import control from '../assets/control.jpg'
+import security from '../assets/security.jpg'
 
 import callcenter from '../assets/callcenter.png'
 import portatil from '../assets/portatil.png'
@@ -19,30 +20,28 @@ const Seguridad = () => {
     <div className="Seguridad">
       <NavbarPages />
 
-        <div className='w-full bg-primary'>
-            <div className='grid md:grid-cols-2 max-w-[1240px] mx-auto py-4'>
+      <div className='w-full h-[300px]'>
+        <img className='w-full h-full object-cover mix-blend-overlay' src={security} alt="/" />
+      </div>
 
-                <div className='pt-20 text-center'>
-                    <h3 className='text-4xl py-4 font-Montserrat font-bold text-white'>Seguridad</h3>
-                    <div className='text-justify py-4 px-12 text-lg'>
-                    <p className=' text-white'>Nuestro compromiso es salvaguardar el patrimonio, información y demás activos de nuestros clientes, es por ello, que es tan importante contar con un alto estandar en el sistema de seguridad de nuestra banca.</p>
-                    <p className='text-white py-4'>Contamos con un alto nivel de seguridad en nuestra banca en línea, que valida cada inicio de sesión, dispositivo desde el que se inició, tiempo en la aplicación, así como las transacciones realizadas diariamente, para evitar riesgos y posibles estafas. Además contamos con preguntas de seguridad que solamente tú puedes responder.</p>
-                    </div>
-                </div>
+      <div className='w-full bg-primary text-center py-4'>
+        <h1 className='text-white font-Montserrat text-4xl'>Seguridad</h1>
+      </div>
 
-                <div className='m-auto w-80 px-8 py-8 my-18'>
-                    <img src={seguridad} alt="/" />
-                </div>
+        <div className='bg-white w-full py-8 lg:px-16'>
+            <div className='text-justify py-4 px-12 text-lg font-Montserrat'>
+            <p className=''>Nuestro compromiso es salvaguardar el patrimonio, información y demás activos de nuestros clientes, es por ello, que es tan importante contar con un alto estandar en el sistema de seguridad de nuestra banca.</p>
+            <p className='py-4'>Contamos con un alto nivel de seguridad en nuestra banca en línea, que valida cada inicio de sesión, dispositivo desde el que se inició, tiempo en la aplicación, así como las transacciones realizadas diariamente, para evitar riesgos y posibles estafas. Además contamos con preguntas de seguridad que solamente tú puedes responder.</p>
             </div>
         </div>
 
-        <div className='grid md:grid-cols-2 gap-8 place-items-center py-12 px-12 font-Montserrat bg-zinc-50'>
+        <div className='grid md:grid-cols-2 gap-8 place-items-center py-12 px-12 font-Montserrat bg-primary text-white'>
         
-            <div className="border-[3px] border-solid border-secondary rounded-lg">
+            <div className="border-[3px] border-solid border-white rounded-lg">
                 <img src={control} alt="" className="p-4" />
             </div>
 
-            <div className='text-justify text-xl'>
+            <div className='text-justify text-lg'>
                 <div className="font-bold sm:text-[1.5rem] text-[1.5rem] mb-5">
                     Tu seguridad es importante<br /> para nosotros,{" "}
                     <span className="text-secondary">por eso te sugerimos tomar en cuenta las siguientes recomendaciones:</span>
