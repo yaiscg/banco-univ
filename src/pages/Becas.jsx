@@ -25,7 +25,7 @@ const Becas = () => {
 
       <div className='bg-white w-full py-8 lg:px-16'>
 
-        <h1 className='text-primary text-2xl font-Montserrat text-center'> Comprometidos con la educación y el futuro social.</h1>
+        <h1 className='text-primary text-2xl font-Montserrat text-center px-6'> Comprometidos con la educación y el futuro social.</h1>
         <p className='py-4 px-8 text-xl font-Montserrat text-justify'>El banco universitario permite a los estudiantes cobrar sus becas a través de él, ya se retirando en efectivo en los cajeros o sucursales, o a través de la banca en línea pueden verificar que la beca ha sido depositada y realizar sus respectivas transacciones. Con esta ilusión y compromiso, colaboramos activamente en distintos programas de formación de alto valor con nuestro programa de BECAS BANCO UNIVERSITARIO, con el objetivo de impulsar el acceso al conocimiento.</p>
       </div>
 

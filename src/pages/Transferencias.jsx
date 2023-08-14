@@ -28,7 +28,7 @@ const Transferencias = () => {
       <div className='bg-white w-full py-8 lg:px-16'>
             <div className='px-8 text-lg font-Montserrat text-justify'>
               <p className=''>Así como lo lees, el Banco Universitario te ofrece un servicio de transferencias entre estudiantes sin ningún costo adicional, por lo que ahora es más fácil el intercambio de dinero. En el Menú de nuestra Banca en Línea, puedes acceder a la opción de transferencias, en donde puedes transferir dinero a la cuenta de un tercero, la cual se hace efectiva de manera inmediata, por lo que el receptor puede disponer de él al segundo de realizarse.</p>
-              <p className='py-4'>¡Ahorra dinero y tiempo! Este servicio permite transferir dinero de manera rápida, segura y eficiente, lo que permite a los estudiantes contar con una alternativa más para realizar sus pagos y transacciones.</p>
+              <p className='py-5'>¡Ahorra dinero y tiempo! Este servicio permite transferir dinero de manera rápida, segura y eficiente, lo que permite a los estudiantes contar con una alternativa más para realizar sus pagos y transacciones.</p>
             </div>
       </div>
 
