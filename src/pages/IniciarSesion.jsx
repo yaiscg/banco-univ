@@ -75,7 +75,7 @@ const IniciarSesion = () => {
             <span className=" text-primary text-md"><Link to={"/olvido"}>Olvidé mi usuario o contraseña</Link></span>
             </div>
             <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-            Iniciar sesión
+              <Link to={"/homebanca"}> Iniciar sesión</Link>
             </button>
         </form>
         <div className="text-center text-gray-400">

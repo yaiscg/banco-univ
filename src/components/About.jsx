@@ -13,7 +13,9 @@ const About = () => {
                         <h1 className="py-1 text-5xl md:text-7xl font-bold text-primary">Banco Universitario</h1>
                         <p className="text-xl text-secondary font-Montserrat">Impulsamos tu destino.</p>
                         <p className="text-xl my-4">Tenemos 5 años en el mercado, prestando servicios financieros a estudiante universitarios, mediante las diversas sucursales, cajeros electrónicos y ahora con nuestra banca electrónica.</p>
+                        
                         <button className="py-3 px-6 sm:w-[60%] my-4 bg-secondary border-secondary"><Link to={"/registro"}>Únete a nosotros</Link></button>
+                    
                     </div>
 
                     <div>

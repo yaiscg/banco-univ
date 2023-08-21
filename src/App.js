@@ -18,6 +18,7 @@ import Preguntas from './pages/Preguntas';
 import Olvido from './pages/Olvido';
 import Contrasenna from './pages/Contrasenna';
 import Usuario from './pages/Usuario';
+import HomeBanca from "./banca/HomeBanca";
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
         <Route path="/olvido" element={<Olvido/>} />
         <Route path="/contrasenna" element={<Contrasenna/>} />
         <Route path="/usuario" element={<Usuario/>} />
+        <Route path="/homebanca" element={<HomeBanca/>} />
       </Routes>
     </div>
   );
