@@ -15,7 +15,7 @@ const Info = () => {
 
             <div className="items-center justify-center relative flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
                 
-                <h1 className="border-b text-center border-primary mb-3 text-lg font-bold font-Montserrat text-primary px-80 py-6">Posición Consolidada</h1>
+                <h1 className="border-b text-center border-secondary mb-3 text-lg font-bold font-Montserrat text-primary py-6">Posición Consolidada</h1>
                 
                 <div className="grid md:grid-cols-4 gap-8 py-12 justify-center md:flex text-sm items-center jsutify-center">
 
@@ -41,8 +41,8 @@ const Info = () => {
 
                 </div>
 
-                <h1 className="border-b text-center border-primary mb-3 text-lg font-bold font-Montserrat text-primary px-80 py-2"></h1>
-                <h1 className="border-b text-center mb-3 text-lg font-bold font-Montserrat text-primary px-80 py-6"></h1>
+                <h1 className="border-b text-center border-secondary mb-3 text-lg font-bold font-Montserrat text-primary py-2"></h1>
+                <h1 className="border-b text-center mb-3 text-lg font-bold font-Montserrat text-primary py-6"></h1>
 
 
             </div>

@@ -19,6 +19,7 @@ import Olvido from './pages/Olvido';
 import Contrasenna from './pages/Contrasenna';
 import Usuario from './pages/Usuario';
 import HomeBanca from "./banca/HomeBanca";
+import Logout from "./banca/Logout";
 
 function App() {
 
@@ -46,7 +47,8 @@ function App() {
         <Route path="/olvido" element={<Olvido/>} />
         <Route path="/contrasenna" element={<Contrasenna/>} />
         <Route path="/usuario" element={<Usuario/>} />
-        <Route path="/homebanca" element={<HomeBanca/>} />
+        <Route path="/homebanca" element={<HomeBanca/>} />+
+        <Route path="/logout" element={<Logout/>} />
       </Routes>
     </div>
   );

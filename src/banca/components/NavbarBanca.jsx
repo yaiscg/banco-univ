@@ -5,7 +5,7 @@ import { TbArrowsExchange2 } from "react-icons/tb";
 import { LuContact } from "react-icons/lu";
 import { AiOutlineFileSearch } from "react-icons/ai";
 
-
+import { Link } from "react-router-dom";
 
 
 const NavbarBanca = () => {
@@ -46,10 +46,11 @@ const NavbarBanca = () => {
 
                         <button className="bg-transparent border-transparent text-black px-12">
                             <div className="hidden md:flex items-center">
-                            <h1>Salir</h1>
+                            <Link to={"/logout"}>Salir</Link>
                             <CiLogout className="px-1 w-7"/>
                             </div>
                         </button>
+
                         </div>
                     </div>
 
