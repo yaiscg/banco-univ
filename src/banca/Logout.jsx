@@ -7,11 +7,11 @@ const Logout = () => {
     return (
         <div className="w-full min-h-screen bg-gray-200">
 
-            <div className="grid grid-cols-3 place-items-center py-28">
+            <div className="grid md:grid-cols-3 place-items-center py-28">
                 
                 <div></div>
 
-                <div className="relative flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
+                <div className=" relative flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
                     
                     <img className='w-30 py-6 px-10 m-auto' src={logo} alt="/" />
 
