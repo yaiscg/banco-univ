@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import { BsChevronDown } from "react-icons/bs";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { CiLogout } from "react-icons/ci";
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { LuContact } from "react-icons/lu";
@@ -14,6 +14,7 @@ import {Bars3Icon,UserPlusIcon,XCircleIcon} from "@heroicons/react/24/outline"
 const NavbarBanca = () => {
 
     const [nav, setNav] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
     const handleClick = () => setNav(!nav)
 
     const handleClose =()=> setNav(!nav)
@@ -36,13 +37,26 @@ const NavbarBanca = () => {
                             </div>
                         </button>
 
-                        <button className="bg-transparent border-transparent text-black px-6">
+                        <button 
+                            className="bg-transparent border-transparent text-black px-6" 
+                            onClick={() =>setIsOpen((prev) => !prev)}>
                             <div className="hidden md:flex items-center">
                             <TbArrowsExchange2 className="px-1 w-7"/>
                             <h1>Transferencias</h1>
-                            <BsChevronDown className="px-1 w-7"/>
+                            {!isOpen ? (
+                                <BsChevronDown className="px-1 w-7"/>
+                            ): (
+                                <BsChevronUp className="px-1 w-7"/>
+                            )}
+                            {isOpen && (
+                            <div className="bg-zinc-100 absolute top-10 flex flex-col items-start py-2 w-[200px]">
+                                <h1 className="px-5 py-2"><Link to="/frecuente">Contacto frecuente</Link></h1>
+                                <h1 className="px-5 py-2"><Link to="/noregistrado">Contacto no registrado</Link></h1>
+                            </div>
+                            )}
                             </div>
                         </button>
+
 
                         <button className="bg-transparent border-transparent text-black px-6">
                             <div className="hidden md:flex items-center">

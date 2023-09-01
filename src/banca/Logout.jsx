@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 
 import logo from '../banca/assets/logo.png'
 
+import { useNavigate } from 'react-router-dom';
+
 const Logout = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className="w-full min-h-screen bg-gray-200">
 
@@ -22,8 +27,9 @@ const Logout = () => {
                     </div>
 
                     <div className="text-center py-4">
-                        <button className="text-center py-2 px-6 sm:w-[30%] bg-secondary border-secondary hover:text-secondary">
-                        <Link to={"/home"}>Aceptar</Link>
+                        <button className="text-center py-2 px-6 sm:w-[30%] bg-secondary border-secondary hover:text-secondary"
+                                onClick={() => navigate("/home")}>
+                        Aceptar
                         </button>
                     </div>
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import login from "../assets/login.jpg";
 import {RiUser3Line, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
 import { toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,6 +12,7 @@ const IniciarSesion = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleShowPassword = () => {
     setShowPassword (!showPassword);
@@ -74,8 +76,9 @@ const IniciarSesion = () => {
           <div className="flex justify-between w-full py-4">
             <span className=" text-primary text-md"><Link to={"/olvido"}>Olvidé mi usuario o contraseña</Link></span>
             </div>
-            <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-              <Link to={"/homebanca"}> Iniciar sesión</Link>
+            <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary"
+                    onClick={() => navigate("/homebanca")}>
+               Iniciar sesión
             </button>
         </form>
         <div className="text-center text-gray-400">
