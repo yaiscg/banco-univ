@@ -66,8 +66,8 @@ const Frecuente = () => {
                       message: "Por favor ingrese concepto"
                     },
                     maxLength: {
-                      value: 10,
-                      message: "El concepto no puede contener más de 10 caracteres"
+                      value: 20,
+                      message: "El concepto no puede contener más de 20 caracteres"
                     }
                   })}
                 /> 

@@ -1,10 +1,14 @@
 import React from "react";
-
-
+import { useState } from "react";
 import { BsJustifyLeft } from "react-icons/bs";
 import { RiEyeLine } from "react-icons/ri";
+import Saldo from "./Saldo";
 
 const Info = () => {
+    const [showBalance, setShowBalance] = useState(false);
+
+    const handleOnClose = () => {setShowBalance(false)
+}
     return (
         <div className="w-full min-h-screen bg-gray-200">
             <div className="py-6">
@@ -36,7 +40,7 @@ const Info = () => {
 
                     <div>
                         <h1 className="px-20 font-semibold">Saldo</h1>
-                        <button className="bg-transparent border-transparent text-black px-20 py-12"><RiEyeLine className="px-1 w-10 text-xl"/></button>
+                        <button onClick={() => setShowBalance(true)} className="bg-transparent border-transparent text-black px-20 py-12"><RiEyeLine className="px-1 w-10 text-xl"/></button>
                     </div>
 
                 </div>
@@ -44,9 +48,9 @@ const Info = () => {
                 <h1 className="border-b text-center border-secondary mb-3 text-lg font-bold font-Montserrat text-primary py-2"></h1>
                 <h1 className="border-b text-center mb-3 text-lg font-bold font-Montserrat text-primary py-6"></h1>
 
-
             </div>
 
+        <Saldo onClose={handleOnClose} visible={showBalance}/>
 
         </div>
     )

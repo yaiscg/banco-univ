@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 const NoRegistrado = () => {
  
-  const {register, handleSubmit,
+  const {register, handleSubmit, isDirty, isValid,
     formState: {errors} 
   } = useForm();
 
@@ -114,8 +114,8 @@ const NoRegistrado = () => {
                       message: "Nombre no válido"
                     },
                     maxLength: {
-                      value: 20,
-                      message: "El nombre no puede contener más de 20 caracteres"
+                      value: 30,
+                      message: "El nombre no puede contener más de 30 caracteres"
                     }
                   })}
                 />
@@ -161,8 +161,8 @@ const NoRegistrado = () => {
                       message: "Por favor ingrese concepto"
                     },
                     maxLength: {
-                      value: 10,
-                      message: "El concepto no puede contener más de 10 caracteres"
+                      value: 20,
+                      message: "El concepto no puede contener más de 20 caracteres"
                     }
                   })}
                 /> 
