@@ -35,6 +35,10 @@ const Frecuente = () => {
                   placeholder="Monto"
                   name="monto"
                   {...register("monto", {
+                    required: {
+                      value: true,
+                      message: "Por favor ingrese monto"
+                    },
                     pattern: {
                       value: /^[0-9]+[0+9]*$/,
                       message: "Monto no válido"
@@ -57,6 +61,10 @@ const Frecuente = () => {
                   placeholder="Concepto"
                   name="concepto"
                   {...register("concepto", {
+                    required: {
+                      value: true,
+                      message: "Por favor ingrese concepto"
+                    },
                     maxLength: {
                       value: 10,
                       message: "Concepto no válido"
