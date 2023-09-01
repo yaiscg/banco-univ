@@ -20,13 +20,13 @@ const Frecuente = () => {
               <span className="flex items-center justify-center mb-3 text-xl font-bold font-Montserrat text-primary">Transferencias / Contacto frecuente</span>
             <div className="py-4">
               <select className="w-full border rounded-lg py-3 px-3 text-gray-400 outline-none focus:border-primary" name="cuenta">
-                  <option value="v">Cuenta a debitar</option>
+                  <option value="cuentaDeb">Cuenta a debitar</option>
                 </select>
             </div>
             <div className="py-4">
               <select className="w-full border rounded-lg py-3 px-3 text-gray-400 outline-none focus:border-primary" name="cuenta">
-                  <option value="v">Cuenta a abonar</option>
-                </select>
+                  <option value="cuentaAb">Cuenta a abonar</option>
+              </select>
             </div>
             <div className="py-4">
                 <input
@@ -67,7 +67,7 @@ const Frecuente = () => {
                     },
                     maxLength: {
                       value: 10,
-                      message: "Concepto no válido"
+                      message: "El concepto no puede contener más de 10 caracteres"
                     }
                   })}
                 /> 

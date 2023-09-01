@@ -21,6 +21,7 @@ import Usuario from './pages/Usuario';
 import HomeBanca from "./banca/HomeBanca";
 import Logout from "./banca/Logout";
 import Frecuente from "./banca/Frecuente";
+import NoRegistrado from "./banca/NoRegistrado";
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
         <Route path="/homebanca" element={<HomeBanca/>} />+
         <Route path="/logout" element={<Logout/>} />
         <Route path="/frecuente" element={<Frecuente/>} />
+        <Route path="/noregistrado" element={<NoRegistrado/>} />
       </Routes>
     </div>
   );
