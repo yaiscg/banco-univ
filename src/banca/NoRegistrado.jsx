@@ -73,7 +73,7 @@ const NoRegistrado = () => {
                 type="text"
                 className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
                 placeholder="Cuenta del beneficiario"
-                nombre="cuetaBenf"
+                name="cuetaBenf"
                 {...register("cuentaBenf", {
                   required: {
                     value: true,
