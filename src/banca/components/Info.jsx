@@ -3,12 +3,20 @@ import { useState } from "react";
 import { BsJustifyLeft } from "react-icons/bs";
 import { RiEyeLine } from "react-icons/ri";
 import Saldo from "./Saldo";
+import Movimientos from "./Movimientos";
 
 const Info = () => {
     const [showBalance, setShowBalance] = useState(false);
+    const [showTransactions, setShowTransactions] = useState(false);
 
-    const handleOnClose = () => {setShowBalance(false)
-}
+    const handleOnClose = () => {
+        setShowBalance(false)
+    }
+
+    const handleOnCloseTransactions = () => {
+        setShowTransactions(false)
+    }
+
     return (
         <div className="w-full min-h-screen bg-gray-200">
             <div className="py-6">
@@ -35,7 +43,7 @@ const Info = () => {
 
                     <div>
                         <h1 className="px-20 font-semibold">Movimientos</h1>
-                        <button className="bg-transparent border-transparent text-black px-24 py-12"><BsJustifyLeft className="px-1 w-10 text-xl"/></button>
+                        <button onClick={() => setShowTransactions(true)} className="bg-transparent border-transparent text-black px-24 py-12"><BsJustifyLeft className="px-1 w-10 text-xl"/></button>
                     </div>
 
                     <div>
@@ -49,6 +57,8 @@ const Info = () => {
                 <h1 className="border-b text-center mb-3 text-lg font-bold font-Montserrat text-primary py-6"></h1>
 
             </div>
+
+        <Movimientos onClose={handleOnCloseTransactions} visible={showTransactions}/>
 
         <Saldo onClose={handleOnClose} visible={showBalance}/>
 
