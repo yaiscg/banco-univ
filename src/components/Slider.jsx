@@ -1,13 +1,28 @@
-import React, {useState} from 'react';
-import { RxDotFilled } from 'react-icons/rx';
-
-import {ArrowLeftIcon, ArrowRightIcon, StarIcon} from "@heroicons/react/24/outline"
+import React, { useState } from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 
 import laptopImage from '../assets/laptop.png';
 import mujerImage from '../assets/mujer.jpg';
 import homeImage from '../assets/home1.png';
 import tdccImage from '../assets/tdcc.png';
 import tecnoImage from '../assets/tecno.jpg';
+
+const imageStyle = {
+  width: '1400px',
+  height: '510px',
+  objectFit: 'cover',
+  borderRadius: '10px',
+};
+
+const dotStyle = {
+  width: '10px',
+  height: '10px',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  borderRadius: '50%',
+  margin: '0 5px',
+};
 
 const Slider = () => {
   const slides = [
@@ -31,47 +46,55 @@ const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
   };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+    setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
   };
 
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
-  
   return (
-    <div name="home" className="max-w-[1400px] h-[640px] w-full m-auto py-20 px-4 relative group bg-zinc-50">
-      <div 
-        style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
-        className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
-        ></div>
-        {/* Left arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-white/20 text-accent cursor-pointer mx-10">
-        <ArrowLeftIcon onClick={prevSlide} className="w-5"/>
+    <div className="carousel-container max-w-[1400px] h-[640px] w-full m-auto py-16 px-4 relative group bg-zinc-50">
+      <div className="carousel-wrapper" style={{ touchAction: 'none' }}>
+        <Carousel
+          selectedItem={currentIndex}
+          onChange={setCurrentIndex}
+          emulateTouch={true}
+          autoPlay={true}
+          showArrows={false}
+          showStatus={false}
+          showThumbs={false}
+          interval={5000}
+          transitionTime={1000}
+          className="border-none"
+          renderIndicator={(clickHandler, isSelected, index) => {
+            return (
+              <div
+                className="dot"
+                onClick={clickHandler}
+                style={{
+                  ...dotStyle,
+                  backgroundColor: isSelected ? 'rgba(0, 0, 0, 0.8)' : dotStyle.backgroundColor,
+                }}
+              ></div>
+            );
+          }}
+        >
+          {slides.map((slide, slideIndex) => (
+            <div key={slideIndex}>
+              <img src={slide.url} alt={`Slide ${slideIndex}`} style={imageStyle} />
+            </div>
+          ))}
+        </Carousel>
       </div>
-        {/* Right arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-white/20 text-accent cursor-pointer mx-10">
-        <ArrowRightIcon onClick={nextSlide} className="w-5"/>
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-accent cursor-pointer mx-10">
+        <ArrowLeftIcon onClick={prevSlide} className="w-6" />
       </div>
-      <div className="flex top-4 justify-center py-2">
-        {slides.map((slide, slideIndex) => (
-          <div 
-            key={slideIndex} 
-            onClick={() => goToSlide(slideIndex)} 
-            className="text-2xl cursor-pointer text-accent">
-            <RxDotFilled/>
-          </div>
-        ))}
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-accent cursor-pointer mx-10">
+        <ArrowRightIcon onClick={nextSlide} className="w-6" />
       </div>
     </div>
   );
 }
 
-export default Slider
+export default Slider;
