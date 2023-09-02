@@ -15,7 +15,12 @@ import perfil from '../assets/perfil.png'
 import agenda from '../assets/agenda.png'
 import billetera from '../assets/billetera.png'
 
+import { useNavigate } from 'react-router-dom';
+
 const Banca = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="Banca">
       <NavbarPages />
@@ -32,7 +37,7 @@ const Banca = () => {
               <div className='flex flex-col justify-center md:items-center w-full'>
                 <h3 className='text-primary text-xl font-Montserrat text-center py-1'>Un servicio en línea rápido y seguro.</h3>
                 <p className='py-2 px-8 text-lg font-Montserrat text-justify'> Con nuestra banca en línea consulta tu saldo y realiza tus transacciones por internet, en donde te encuentres y a la hora que desees, siendo esta una plataforma fácil de manejar, intuitiva y segura. Ahora solo necesitas un dispositvo y acceso a internet, para realizar transferencias a terceros y muchas cosas más...</p>
-                <button className=" text-center py-2 px-6 sm:w-[30%] bg-secondary border-secondary hover:text-secondary hover:bg-zinc-100"><Link to={"/registro"}>Únete ahora</Link></button>
+                <button className=" text-center py-2 px-6 sm:w-[30%] bg-secondary border-secondary hover:text-secondary hover:bg-zinc-100" onClick={() => navigate("/registro")}>Únete ahora</button>
               </div>
 
       </div>
@@ -88,7 +93,7 @@ const Banca = () => {
           </div>
 
           <div className='text-center py-4'>
-            <button className="py-3 px-6 sm:w-[20%] my-2"><Link to={"/servicios"}>Conoce otros servicios</Link></button>
+            <button className="py-3 px-6 sm:w-[20%] my-2" onClick={() => navigate("/servicios")}>Conoce otros servicios</button>
           </div>
 
         </div>

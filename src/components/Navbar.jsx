@@ -48,17 +48,17 @@ const Navbar = () => {
 
             <ul className={!nav ? "hidden" : "absolute bg-zinc-100 w-full px-8"}>
 
-            <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="one" smooth={true} duration={500}>Servicios</Link></li>
-            <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="two" smooth={true} offset={-50} duration={500}>Estudiantes</Link></li>
-            <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="three" smooth={true} offset={-20} duration={500}>Nosotros</Link></li>
-            <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="four" smooth={true} offset={-100} duration={500}>Contacto</Link></li>
+                <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="one" smooth={true} duration={500}>Servicios</Link></li>
+                <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="two" smooth={true} offset={-50} duration={500}>Estudiantes</Link></li>
+                <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="three" smooth={true} offset={-20} duration={500}>Nosotros</Link></li>
+                <li className='border-b-2 border-indigo-100 w-full'><Link onClick={handleClose} to="four" smooth={true} offset={-100} duration={500}>Contacto</Link></li>
 
                 <div className="flex flex-col my-4">
-                    <button className="bg-transparent text-primary px-8 py-3 mb-4">
-                        <Link1 to={"/registro"}>Regístrate</Link1>
+                    <button className="bg-transparent text-primary px-8 py-3 mb-4" onClick={() => navigate("/registro")}>
+                        Regístrate
                     </button>
-                    <button className="px-8 py-3">
-                        <Link1 to={"/inicio"}>Acceso</Link1>
+                    <button className="px-8 py-3" onClick={() => navigate("/inicio")}>
+                        Acceso
                     </button>
                 </div>
             </ul>
