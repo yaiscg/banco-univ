@@ -38,7 +38,7 @@ const IniciarSesion = () => {
               <input
                 type="text"
                 className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
-                placeholder="Correo"
+                placeholder="Correo electrónico"
                 name="mail"
                 {...register("mail", {
                   required: {
