@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import {RiUser3Line, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
 import { toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom';
 
 const Contrasenna = () => {
 
@@ -10,6 +11,7 @@ const Contrasenna = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     documento:'V',
@@ -158,8 +160,8 @@ const Contrasenna = () => {
             <div className="flex justify-between w-full py-2">
           </div>
           <div className='grid grid-cols-2 gap-5'>
-            <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-              <Link to={"/olvido"}>Cancelar</Link>
+            <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary" onClick={() => navigate("/olvido")}>
+              Cancelar
             </button>
             <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
               Confirmar

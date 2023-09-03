@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import {RiUser3Line, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
 import { toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom';
 
 const Olvido = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleShowPassword = () => {
     setShowPassword (!showPassword);
@@ -46,12 +48,12 @@ const Olvido = () => {
 
           <div className="flex justify-between w-full py-2">
         </div>
-        <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-            <Link to={"/usuario"}>Olvido de correo</Link>
+        <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary" onClick={() => navigate("/usuario")}>
+            Olvido de correo
         </button>
 
-        <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-            <Link to={"/contrasenna"}>Olvido de contraseña</Link>
+        <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary" onClick={() => navigate("/contrasenna")}>
+            Olvido de contraseña
         </button>
         </form>
         <span className=" text-primary text-md text-center"><Link to={"/inicio"}>Volver a la Banca en Línea</Link></span>
