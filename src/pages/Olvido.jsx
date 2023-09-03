@@ -47,7 +47,7 @@ const Olvido = () => {
           <div className="flex justify-between w-full py-2">
         </div>
         <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-            <Link to={"/usuario"}>Olvido de usuario</Link>
+            <Link to={"/usuario"}>Olvido de correo</Link>
         </button>
 
         <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">

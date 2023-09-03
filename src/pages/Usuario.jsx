@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
-import {RiUser3Line, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
+import {RiMailLine, RiLockLine, RiEyeLine, RiEyeOffLine} from "react-icons/ri"
 import { toast } from "react-toastify";
 
 const Usuario = () => {
@@ -64,7 +64,7 @@ const Usuario = () => {
         {/* left side */}
         <div className="flex flex-col justify-center p-8 md:p-14">
             <span className="mb-3 text-3xl font-bold font-Montserrat text-primary">Bienvenido a</span>
-            <span className="mb-3 text-4xl font-bold font-Montserrat text-primary">Gestión de Usuario</span>
+            <span className="mb-3 text-4xl font-bold font-Montserrat text-primary">Gestión de Correo</span>
             <span className="font-light text-gray-600 mb-8 text-xl">Por favor ingresa tus datos</span>
           <form onSubmit={handleSubmit}>
             
@@ -91,11 +91,11 @@ const Usuario = () => {
             </div>
 
             <div className="relative py-4">
-              <RiUser3Line className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
+              <RiMailLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
                 type="text"
                 className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
-                placeholder="Nuevo usuario"
+                placeholder="Nuevo correo"
                 value={user}
                 onChange={(e) => setUser(e.target.value)}
               />
