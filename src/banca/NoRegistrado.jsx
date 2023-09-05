@@ -1,19 +1,25 @@
-import React from 'react'
+import React from 'react';
 import { useForm } from "react-hook-form";
 
 const NoRegistrado = () => {
- 
-  const {register, handleSubmit, isDirty, isValid,
-    formState: {errors} 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
   } = useForm();
 
-  const onSubmit = handleSubmit ((data) => {
-      console.log(data);
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
   });
 
+  const handleLimpiar = () => {
+    reset();
+  };
+
   return (
-  <div>
-    <form onSubmit={onSubmit}>
+    <div>
+      <form onSubmit={onSubmit}>
       <div className="flex items-center justify-center min-h-screen">
         <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
           <div className="flex flex-col justify-center p-8 md:p-14">
@@ -39,7 +45,7 @@ const NoRegistrado = () => {
               <div className="py-4 col-end-10 px-1">
                 <input
                   type="text"
-                  className="py-3 border w-full border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  className="py-3 border w-full border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                   placeholder="Cédula"
                   name="cedula"
                   {...register("cedula", {
@@ -71,7 +77,7 @@ const NoRegistrado = () => {
             <div className="py-4">
               <input
                 type="text"
-                className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                 placeholder="Cuenta del beneficiario"
                 name="cuetaBenf"
                 {...register("cuentaBenf", {
@@ -101,7 +107,7 @@ const NoRegistrado = () => {
           <div className="py-4">
                 <input
                   type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                   placeholder="Nombre del beneficiario"
                   name="nombre"
                   {...register("nombre", {
@@ -126,7 +132,7 @@ const NoRegistrado = () => {
             <div className="py-4">
                 <input
                   type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                   placeholder="Monto"
                   name="monto"
                   {...register("monto", {
@@ -152,7 +158,7 @@ const NoRegistrado = () => {
             <div className="py-4">
                 <input
                   type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                   placeholder="Concepto"
                   name="concepto"
                   {...register("concepto", {
@@ -171,21 +177,20 @@ const NoRegistrado = () => {
                 }
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <button type="submit" className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-                Transferir
-              </button>
-              <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-                Limpiar
-              </button>
-            </div>
+          <button type="submit" className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
+            Transferir
+          </button>
+          <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary" onClick={handleLimpiar}>
+            Limpiar
+          </button>
+        </div>
           </div>
         </div>
       </div>
     </form>
   </div>
-  )
+);
+};
 
-
-}
 
 export default NoRegistrado

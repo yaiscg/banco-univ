@@ -21,12 +21,12 @@ const Navbar = () => {
         <div className="w-screen h-[80 px] z-10 bg-zinc-100 fixed drop-shadow-lg mx-auto py-1">
             <div className="px-10 flex justify-between items-center w-full h-full">
                 <div className="flex items-center">
-                    <h1 className='text-2xl font-bold font-Montserrat mr-4 sm:text-2xl text-primary'><Link to="home" smooth={true} duration={500}>BANCO UNIVERSITARIO</Link></h1>
+                    <h1 className='text-2xl font-bold font-Montserrat mr-4 sm:text-2xl text-primary'><Link to="home" smooth={true} duration={500} onClick={() => scroll.scrollToTop()}className="cursor-pointer">BANCO UNIVERSITARIO</Link></h1>
                     <ul className='font-Montserrat hidden md:flex text-lg'>  
-                        <li><Link to="one" smooth={true} duration={500}>Servicios</Link></li>
-                        <li><Link to="two" smooth={true} offset={-50} duration={500}>Estudiantes</Link></li>
-                        <li><Link to="three" smooth={true} offset={-20} duration={500}>Nosotros</Link></li>
-                        <li><Link to="four" smooth={true} offset={-100} duration={500}>Contacto</Link></li>
+                        <li><Link to="one" smooth={true} duration={500}className="cursor-pointer">Servicios</Link></li>
+                        <li><Link to="two" smooth={true} offset={-50} duration={500}className="cursor-pointer">Estudiantes</Link></li>
+                        <li><Link to="three" smooth={true} offset={-20} duration={500}className="cursor-pointer">Nosotros</Link></li>
+                        <li><Link to="four" smooth={true} offset={-100} duration={500}className="cursor-pointer">Contacto</Link></li>
                     </ul>
                 </div>
 

@@ -37,7 +37,7 @@ const IniciarSesion = () => {
               <RiMailLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
                 type="text"
-                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
+                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary flex"
                 placeholder="Correo electrónico"
                 name="mail"
                 {...register("mail", {
@@ -59,7 +59,7 @@ const IniciarSesion = () => {
               <RiLockLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
                 type={showPassword ? "text" : "password"}
-                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
+                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary flex"
                 placeholder="Contraseña"
                 name="password"
                 {...register("password", {

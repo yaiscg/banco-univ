@@ -41,7 +41,7 @@ const Registro = () => {
               <div className="py-4">
                 <input
                   type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                   placeholder="Nombres"
                   name="name"
                   {...register("name", {
@@ -66,7 +66,7 @@ const Registro = () => {
               <div className="py-4">
                 <input
                   type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                   placeholder="Apellidos"
                   name="surname"
                   {...register("surname", {
@@ -108,7 +108,7 @@ const Registro = () => {
                 <div className="py-6 col-end-10 px-1">
                   <input
                     type="text"
-                    className="py-3 border w-full border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                    className="py-3 border w-full border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                     placeholder="Cédula"
                     name="cedula"
                     {...register("cedula", {
@@ -141,7 +141,7 @@ const Registro = () => {
               <label className="text-sm text-gray-400">Fecha de nacimiento</label>
                 <input
                   type="date"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                   name="birthDate"
                   {...register("birthDate", {
                     required: {
@@ -159,7 +159,7 @@ const Registro = () => {
             <div className="py-4">
               <input
                 type="text"
-                className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                 placeholder="Número de cuenta"
                 name="account"
                 {...register("account", {
@@ -190,7 +190,7 @@ const Registro = () => {
               <RiMailLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
                 type="text"
-                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
+                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary flex"
                 placeholder="Correo electrónico"
                 name="mail"
                 {...register("mail", {
@@ -213,7 +213,7 @@ const Registro = () => {
               <RiLockLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
                 type={showPassword ? "text" : "password"}
-                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
+                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary flex"
                 placeholder="Contraseña"
                 name="password"
                 {...register("password", {
@@ -245,7 +245,7 @@ const Registro = () => {
               <RiLockLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
               <input
                 type={showConfirmPassword ? "text" : "password"}
-                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
+                className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary flex"
                 placeholder="Repetir contraseña"
                 name="confirmPassword"
                 {...register("confirmPassword", {

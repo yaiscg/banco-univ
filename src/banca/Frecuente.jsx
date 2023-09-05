@@ -31,7 +31,7 @@ const Frecuente = () => {
             <div className="py-4">
                 <input
                   type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                   placeholder="Monto"
                   name="monto"
                   {...register("monto", {
@@ -57,7 +57,7 @@ const Frecuente = () => {
             <div className="py-4">
                 <input
                   type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                   placeholder="Concepto"
                   name="concepto"
                   {...register("concepto", {

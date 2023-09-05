@@ -25,7 +25,7 @@ const Info = () => {
             </div>
 
 
-            <div className=" items-center justify-center relative flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
+            <div className=" items-center justify-center flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
                 
                 <h1 className="border-b text-center border-secondary mb-3 text-lg font-bold font-Montserrat text-primary py-6">Posición Consolidada</h1>
                 

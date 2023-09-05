@@ -53,7 +53,7 @@ const Contrasenna = () => {
             <div className="py-4 col-end-2">
               <input
                 type="text"
-                className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary"
+                className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
                 placeholder="Cédula"
                 name="cedula"
                 {...register("cedula", {
@@ -85,7 +85,7 @@ const Contrasenna = () => {
                 <RiMailLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
                 <input
                   type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary flex"
                   placeholder="Correo electrónico"
                   name="mail"
                   {...register("mail", {
@@ -108,7 +108,7 @@ const Contrasenna = () => {
                 <RiLockLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary flex"
                   placeholder="Nueva contraseña"
                   name="password"
                   {...register("password", {
@@ -140,7 +140,7 @@ const Contrasenna = () => {
                 <RiLockLine className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"/>
                 <input
                   type={showConfirmPassword ? "text" : "password"}
-                  className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary"
+                  className="py-3 w-full border border-gray-200 outline-none px-8 rounded-lg focus:border-primary flex"
                   placeholder="Repetir contraseña"
                   name="confirmPassword"
                   {...register("confirmPassword", {
