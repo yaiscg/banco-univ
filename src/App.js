@@ -22,6 +22,9 @@ import HomeBanca from "./banca/HomeBanca";
 import Logout from "./banca/Logout";
 import Frecuente from "./banca/Frecuente";
 import NoRegistrado from "./banca/NoRegistrado";
+import AggContacto from "./banca/AggContacto";
+import ListContacto from "./banca/ListContacto";
+import Movimientos from "./banca/Movimientos";
 
 function App() {
 
@@ -53,6 +56,9 @@ function App() {
         <Route path="/logout" element={<Logout/>} />
         <Route path="/frecuente" element={<Frecuente/>} />
         <Route path="/noregistrado" element={<NoRegistrado/>} />
+        <Route path="/aggcontacto" element={<AggContacto/>} />
+        <Route path="/listcontacto" element={<ListContacto/>} />
+        <Route path="/movimientos" element={<Movimientos/>} />
       </Routes>
     </div>
   );

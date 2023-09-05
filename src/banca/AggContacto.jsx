@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import NavbarBanca from "../banca/components/NavbarBanca"
 import Header from "../banca/components/Header"
 
-const NoRegistrado = () => {
+const AggContacto = () => {
   const {
     register,
     handleSubmit,
@@ -22,20 +22,14 @@ const NoRegistrado = () => {
 
   return (
     <div>
-
-      <Header/>
-      <NavbarBanca/>
-
+        <Header/>
+        <NavbarBanca/>
       <form onSubmit={onSubmit}>
       <div className="flex items-center justify-center min-h-screen">
-        <div className=" flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
+        <div className="flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
           <div className="flex flex-col justify-center p-8 md:p-14">
-              <span className="flex items-center justify-center mb-3 text-xl font-bold font-Montserrat text-primary">Transferencias / Contacto no registrado</span>
-            <div className="py-4">
-              <select className="w-full border rounded-lg py-3 px-3 text-gray-400 outline-none focus:border-primary" name="cuenta">
-                  <option value="cuentaDeb">Cuenta a debitar</option>
-                </select>
-            </div>
+              <span className="flex items-center justify-center mb-3 text-2xl font-bold font-Montserrat text-primary">Agregar Contacto</span>
+
                         
           <div className="grid grid-cols-2 gap-5">
 
@@ -85,12 +79,12 @@ const NoRegistrado = () => {
               <input
                 type="text"
                 className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
-                placeholder="Cuenta del beneficiario"
+                placeholder="Numero de cuenta"
                 name="cuetaBenf"
                 {...register("cuentaBenf", {
                   required: {
                     value: true,
-                    message: "Por favor ingrese la cuenta del beneficiario"
+                    message: "Por favor ingrese la cuenta"
                   },
                   pattern: {
                     value: /^[0-9]+[0+9]*$/,
@@ -111,54 +105,30 @@ const NoRegistrado = () => {
               }
             </div>
           </div>
+
           <div className="py-4">
                 <input
                   type="text"
                   className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
-                  placeholder="Nombre del beneficiario"
-                  name="nombre"
-                  {...register("nombre", {
+                  placeholder="Alias"
+                  name="alias"
+                  {...register("alias", {
                     required: {
                       value: true,
-                      message: "Por favor ingrese nombre"
+                      message: "Por favor ingrese alias"
                     },
                     pattern: {
                       value: /^[a-zA-Z ]*$/,
-                      message: "Nombre no válido"
+                      message: "Alias no válido"
                     },
                     maxLength: {
                       value: 30,
-                      message: "El nombre no puede contener más de 30 caracteres"
+                      message: "El alias no puede contener más de 30 caracteres"
                     }
                   })}
                 />
                 {
-                  errors.nombre && <span className="text-sm text-red-600">{errors.nombre.message}</span>
-                }
-            </div> 
-            <div className="py-4">
-                <input
-                  type="text"
-                  className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
-                  placeholder="Monto"
-                  name="monto"
-                  {...register("monto", {
-                    required: {
-                      value: true,
-                      message: "Por favor ingrese monto"
-                    },
-                    pattern: {
-                      value: /^[0-9]+[0+9]*$/,
-                      message: "Monto no válido"
-                    },
-                    maxLength: {
-                      value: 5,
-                      message: "Monto excedido"
-                    }
-                  })}
-                />
-                {
-                  errors.monto && <span className="text-sm text-red-600">{errors.monto.message}</span>
+                  errors.alias && <span className="text-sm text-red-600">{errors.alias.message}</span>
                 }
             </div> 
 
@@ -166,26 +136,27 @@ const NoRegistrado = () => {
                 <input
                   type="text"
                   className="py-3 w-full border border-gray-200 outline-none px-4 rounded-lg focus:border-primary flex"
-                  placeholder="Concepto"
-                  name="concepto"
-                  {...register("concepto", {
+                  placeholder="Descripción"
+                  name="descripcion"
+                  {...register("descripcion", {
                     required: {
                       value: true,
-                      message: "Por favor ingrese concepto"
+                      message: "Por favor ingrese descripción"
                     },
                     maxLength: {
                       value: 20,
-                      message: "El concepto no puede contener más de 20 caracteres"
+                      message: "La descripción no puede contener más de 20 caracteres"
                     }
                   })}
                 /> 
                 {
-                  errors.concepto && <span className="text-sm text-red-600">{errors.concepto.message}</span>
+                  errors.descripcion && <span className="text-sm text-red-600">{errors.descripcion.message}</span>
                 }
             </div>
+
             <div className="grid grid-cols-2 gap-6">
           <button type="submit" className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
-            Transferir
+            Confirmar
           </button>
           <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary" onClick={handleLimpiar}>
             Limpiar
@@ -200,4 +171,4 @@ const NoRegistrado = () => {
 };
 
 
-export default NoRegistrado
+export default AggContacto
