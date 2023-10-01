@@ -25,19 +25,22 @@ const IniciarSesion = () => {
           if (response.statusText === "OK") {
             localStorage.setItem("JWT", response.data.data.jwt);
             navigate("/homebanca")
-          } else if (response.data === null) {
+          }
+        }).catch(error => {
+          console.log(error);
+          if (error.response.status === 401) {
             setShowMessage(false);
             setShowMessage1(true);
             setTimeout(() => {
               window.location.reload();
             }, 3000);
           }
-        }).catch(error => {
-          console.log(error);
+          else{
           setShowMessage2(true);
           setTimeout(() => {
             window.location.reload();
           }, 5000);
+          }
         })
     }
   });
