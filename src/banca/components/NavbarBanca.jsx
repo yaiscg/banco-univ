@@ -25,6 +25,12 @@ const NavbarBanca = () => {
 
     const handleClick = () => setNav(!nav)
     const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.clear();
+        console.clear();
+    };
+
     const handleClose = () => setNav(!nav)
 
     return (
@@ -37,7 +43,7 @@ const NavbarBanca = () => {
                     <div className="flex items-center">
                         <div className='font-Montserrat hidden md:flex '>
 
-                            <button 
+                            <button
                                 className="bg-transparent border-transparent text-black px-6"
                                 onClick={() => setIsOpen((prev) => !prev)}>
                                 <div className="hidden md:flex items-center">
@@ -87,7 +93,7 @@ const NavbarBanca = () => {
                             </button>
 
 
-                            <button 
+                            <button
                                 className="bg-transparent border-transparent text-black px-3"
                                 onClick={() => setIsOpen3((prev) => !prev)}>
                                 <div className="hidden md:flex items-center">
@@ -103,19 +109,19 @@ const NavbarBanca = () => {
                                             <button className="border-transparent bg-transparent text-black">
                                                 <h1 className="px-5 py-2 text-sm"><Link to="/aggcontacto">Agregar contacto</Link></h1>
                                             </button>
-                                           
+
                                             <button className="border-transparent bg-transparent text-black">
                                                 <h1 className="px-5 py-2 text-sm"><Link to="/listcontacto">Listado</Link></h1>
                                             </button>
 
                                         </div>
-                                         
+
                                     )}
                                 </div>
                             </button>
 
-                            <button className="bg-transparent border-transparent text-black px-20">
-                                <div className="hidden md:flex items-center">
+                            <button className="bg-transparent border-transparent text-black px-20" onClick={handleLogout}>
+                                <div className="hidden md:flex items-center"onClick={handleLogout}>
                                     <Link to={"/logout"}>Salir</Link>
                                     <CiLogout className="px-1 w-7" />
                                 </div>
@@ -135,7 +141,7 @@ const NavbarBanca = () => {
                     <div className="flex flex-col my-4">
 
 
-                        <button 
+                        <button
                             className="items-center border-primary  bg-transparent text-primary px-8 py-3 mb-4"
                             onClick={() => setIsOpen((prev) => !prev)}>
                             <div>
@@ -166,7 +172,7 @@ const NavbarBanca = () => {
                             </div>
                         </button>
 
-                        <button        
+                        <button
                             className="items-center border-primary  bg-transparent text-primary px-8 py-3 mb-4"
                             onClick={() => setIsOpen3((prev) => !prev)}>
                             <div>
