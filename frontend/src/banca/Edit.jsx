@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from "react-hook-form";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams  } from 'react-router-dom';
 
-import { Apiurl, ApiContactEdit } from '../api/apirest';
+import { Apiurl} from '../api/apirest';
 import axios from 'axios';
 
 const Edit = ({visible, onClose}) => {
+
+  const {id} = useParams();
+  const [data,setData] = useState([]);
+  const token = localStorage.getItem("JWT");
+
 
 ////////////////////////////////
 
@@ -20,22 +25,37 @@ const Edit = ({visible, onClose}) => {
     formState: { errors }
   } = useForm();
 
+  /////SE TRAE LA DATA DE CONTACTOS PERO ME DA ERROR
+
+  useEffect(()=> {
+    axios.get('http://localhost:3000/v1/client/contact?alias=', {
+      headers: {
+          Authorization: "Bearer " + token
+      }
+  })
+    .then(res =>setData(res.data.data))
+    .catch(err => console.log(err))
+  }, [])
+
+
   const onSubmit = handleSubmit((data) => {
     if (!Object.keys(errors).length) {
       setShowMessage(true);
-      let url = Apiurl + ApiContactEdit;
-      const token = localStorage.getItem("JWT");
+      ///let url = Apiurl + ApiContactEdit;
+      //const token = localStorage.getItem("JWT");
       const dataToSend = {
+        //alias: data.id,
         alias: data.alias,
         description: data.description,
       };
-      axios.patch(url, dataToSend, {
+      axios.patch('http://localhost:3000/v1/client/contact/' + id
+        , dataToSend, {
         headers: { 
           Authorization: "Bearer " + token
         }
       })
       .then((response) => {
-        if (response.statusText === "Created") {
+        if (response.statusText === "Updated") {
           setShowMessage(false);
           setShowMessage2(true);
         }
@@ -149,7 +169,7 @@ const Edit = ({visible, onClose}) => {
                                 <p className="text-center text-xl font-semibold">Contacto actualizado con éxito.</p>
                                 <button
                                     className="mt-4 bg-primary text-white py-2 px-4 rounded-lg center"
-                                    onClick={() => navigate("/aaprueba")}
+                                    onClick={() => navigate("/listcontacto")}
                                 >
                                     Continuar
                                 </button>

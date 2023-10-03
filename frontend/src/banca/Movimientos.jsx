@@ -1,12 +1,85 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import NavbarBanca from "../banca/components/NavbarBanca"
 import Header from "../banca/components/Header"
+import Paginacion from "../banca/Paginacion"
+
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 
+import { Apiurl, ApiMovimientos } from '../api/apirest';
+import axios from 'axios';
+
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Movimientos = () => {
+
+    //const navigate = useNavigate();
+
+    const [movimientos,setMovimientos] = useState([]);
+    const [tablaMovimientos, setTablaMovimientos]= useState([]); //////////////////// PARA LA BARRA BUSCADORA
+    const [id,setId] = useState("");
+    const [amount,setAmount] = useState("");
+    const [balance,setBalance] = useState("");
+    const [multiplier,setMultiplier] = useState("");
+    const [account_number,setAccount_number] = useState("");
+    const [description,setDescription] = useState("");
+    const [created_at,setCreated_at] = useState("");
+
+    ////////////////// PAGINACION
+
+    const [movPerPage, setMovPerPage] = useState(5);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const totalMov = movimientos.length
+
+    /////////////////
+
+
+    const token = localStorage.getItem("JWT");
+
+    useEffect(() => {
+        let url = Apiurl + ApiMovimientos;
+        axios.get(url, {
+            headers: {
+                Authorization: "Bearer " + token
+            }
+        })
+        .then(response => {
+            console.log(response);
+            setMovimientos(response.data.data);
+            setTablaMovimientos(response.data.data); ///////PARA LA BARRA BUSCADORA
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    
+    },[ ]);
+
+    /////////////////////
+
+    const formatDate = (created_at) => {
+        return new Date(created_at).toLocaleString("es")
+    }
+
+    /////////////////////////BARRA BUSCADORA
+
+    const [busqueda, setBusqueda]= useState("");
+
+    const handleChange=e=>{
+        setBusqueda(e.target.value);
+        filtrar(e.target.value);
+    }
+    
+    const filtrar=(terminoBusqueda)=>{
+        var resultadosBusqueda=tablaMovimientos.filter((elemento)=>{
+            if(elemento.id.toString().toLowerCase().includes(terminoBusqueda.toLowerCase()))
+            {
+                return elemento;
+            }
+            });
+            setMovimientos(resultadosBusqueda);
+    }
 
     return (
         <div>
@@ -17,7 +90,7 @@ const Movimientos = () => {
             <div className="flex flex-col">
 
                     <div className="overflow-x-auto">
-                        <div className="flex justify-between py-3 pl-2">
+                        <div className="flex justify-end px-8 py-3 pl-2">
     
                             <div className="relative max-w-xs">
                                 
@@ -26,7 +99,9 @@ const Movimientos = () => {
                                     name="hs-table-search"
                                     id="hs-table-search"
                                     className="block w-full p-3 pl-10 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-200 dark:border-gray-700 dark:text-gray-400"
-                                    placeholder="Buscar..."
+                                    placeholder="Buscar por referencia..."
+                                    value={busqueda}
+                                    onChange={handleChange}
                                 />
 
                                 <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
@@ -78,13 +153,19 @@ const Movimientos = () => {
                                                 scope="col"
                                                 className="px-6 py-3 text-xs font-bold text-left  uppercase "
                                             >
+                                                NUMERO DE CUENTA
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="px-6 py-3 text-xs font-bold text-left  uppercase "
+                                            >
                                                 DESCRIPCIÓN
                                             </th>
                                             <th
                                                 scope="col"
                                                 className="px-6 py-3 text-xs font-bold text-left  uppercase "
                                             >
-                                                FECHA
+                                                FECHA Y HORA
                                             </th>
                                         </tr>
                                     </thead>
@@ -92,7 +173,19 @@ const Movimientos = () => {
                                     
                                     <tbody>
 
-    
+                                    {movimientos.map((movimientos,id) => (
+                                        <tr key = {movimientos.id}>
+                                            <td>{movimientos.id}</td>
+                                            <td>{movimientos.amount}</td>
+                                            <td>{movimientos.balance}</td>
+                                            <td>{movimientos.multiplier}</td>
+                                            <td>{movimientos.account_number}</td>
+                                            <td>{movimientos.description}</td>
+                                            <td>{formatDate(movimientos.created_at)}</td>
+                                        </tr>
+                                    ))
+                                    }
+
                                     </tbody>
 
                                 </table>
@@ -102,93 +195,12 @@ const Movimientos = () => {
                     </div>
                 </div>
 
-            <div> 
+        <Paginacion 
+        movPerPage = {movPerPage} 
+        currentPage={currentPage} 
+        setCurrentPage={setCurrentPage}
+        totalMov={totalMov} />
 
-                <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-                    <div className="flex flex-1 justify-between sm:hidden">
-                        <a
-                        href="#"
-                        className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-                        >
-                        Previous
-                        </a>
-                        <a
-                        href="#"
-                        className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-                        >
-                        Next
-                        </a>
-                    </div>
-                    <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-                        <div>
-                        <p className="text-sm text-gray-700">
-                            Showing <span className="font-medium">1</span> to <span className="font-medium">10</span> of{' '}
-                            <span className="font-medium">97</span> results
-                        </p>
-                        </div>
-                        <div>
-                        <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                            <a
-                            href="#"
-                            className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                            >
-                            <span className="sr-only">Previous</span>
-                            <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
-                            </a>
-                            {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */}
-                            <a
-                            href="#"
-                            aria-current="page"
-                            className="relative z-10 inline-flex items-center bg-secondary px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                            >
-                            1
-                            </a>
-                            <a
-                            href="#"
-                            className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                            >
-                            2
-                            </a>
-                            <a
-                            href="#"
-                            className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-                            >
-                            3
-                            </a>
-                            <span className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">
-                            ...
-                            </span>
-                            <a
-                            href="#"
-                            className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-                            >
-                            8
-                            </a>
-                            <a
-                            href="#"
-                            className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                            >
-                            9
-                            </a>
-                            <a
-                            href="#"
-                            className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                            >
-                            10
-                            </a>
-                            <a
-                            href="#"
-                            className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                            >
-                            <span className="sr-only">Next</span>
-                            <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-                            </a>
-                        </nav>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
             
         </div>
 

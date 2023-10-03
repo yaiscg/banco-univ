@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Apiurl, ApiGetContact } from '../api/apirest';
+import { Apiurl} from '../api/apirest';
 import axios from 'axios';
 
 const ViewContactos = ({visible, onClose}) => {
@@ -10,7 +10,7 @@ const ViewContactos = ({visible, onClose}) => {
   const token = localStorage.getItem("JWT");
 
   useEffect(() => {
-    let url = Apiurl + ApiGetContact;
+    let url = Apiurl;
     axios.get(url, {
         headers: {
             Authorization: `Bearer ${token}`
@@ -47,7 +47,7 @@ const ViewContactos = ({visible, onClose}) => {
     flex justify-center items-center"
     >
       <div className="bg-white px-10 py-12 rounded-2xl">
-        <span className="flex items-center justify-center mb-7 text-xl font-bold font-Montserrat text-primary">Saldo disponible</span>
+        <span className="flex items-center justify-center mb-7 text-xl font-bold font-Montserrat text-primary">Detalles</span>
         <h1 className="px-2 py-2 text-left text-sm">Numero de cuenta: {CuentaMessage}</h1>
         <h1 className="px-2 py-2 text-left text-sm">Alias: {AliasMessage}</h1>
         <h1 className="px-2 py-2 text-left text-sm">Descripción: </h1>

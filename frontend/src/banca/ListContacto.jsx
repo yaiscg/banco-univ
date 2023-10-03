@@ -6,7 +6,7 @@ import Header from "../banca/components/Header"
 import Edit from "./Edit";
 import ViewContactos from "./ViewContactos";
 
-import { Apiurl, ApiContactList, ApiContactDelete } from '../api/apirest';
+import { Apiurl, ApiContactList } from '../api/apirest';
 import axios from 'axios';
 
 //ICONOS
@@ -16,10 +16,11 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 
 
-const Aaprueba = () => {
+const ListContacto = () => {
 
     const navigate = useNavigate();
     const [contactos,setLista] = useState([]);
+    const [tablaContactos, setTablaContactos]= useState([]); //////////////////// PARA LA BARRA BUSCADORA
     const [id,setId] = useState("");
     const [account_number,setAccount_number] = useState("");
     const [alias,setAlias] = useState(""); 
@@ -36,6 +37,7 @@ const Aaprueba = () => {
         .then(response => {
             console.log(response);
             setLista(response.data.data);
+            setTablaContactos(response.data.data); ///////PARA LA BARRA BUSCADORA
         })
         .catch(error => {
             console.log(error);
@@ -49,6 +51,27 @@ const Aaprueba = () => {
     const [showView, setShowView] = useState(false);
     const handleOnClose2 = () => { setShowView(false) }
 
+    /////////////////////////BARRA BUSCADORA
+
+    const [busqueda, setBusqueda]= useState("");
+
+    const handleChange=e=>{
+        setBusqueda(e.target.value);
+        filtrar(e.target.value);
+    }
+
+    const filtrar=(terminoBusqueda)=>{
+        var resultadosBusqueda=tablaContactos.filter((elemento)=>{
+          if(elemento.alias.toString().toLowerCase().includes(terminoBusqueda.toLowerCase()))
+          {
+            return elemento;
+          }
+        });
+        setLista(resultadosBusqueda);
+    }
+
+///////////////////////////
+
     return (
         <div>
 
@@ -58,7 +81,7 @@ const Aaprueba = () => {
             <div className="flex flex-col">
 
                 <div className="overflow-x-auto">
-                    <div className="flex justify-between py-3 pl-2">
+                    <div className="flex justify-end px-8 py-3 pl-2">
  
                         <div className="relative max-w-xs">
                             
@@ -66,8 +89,10 @@ const Aaprueba = () => {
                                 type="text"
                                 name="hs-table-search"
                                 id="hs-table-search"
-                                className="block w-full p-3 pl-10 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-200 dark:border-gray-700 dark:text-gray-400"
-                                placeholder="Buscar..."
+                                className="block w-full p-3 pl-10 text-sm border-gray-200 rounded-md dark:bg-gray-200 dark:border-gray-500 dark:text-gray-400"
+                                placeholder="Buscar por alias..."
+                                value={busqueda}
+                                onChange={handleChange}
                             />
 
                             <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
@@ -190,5 +215,5 @@ const Aaprueba = () => {
         
 }
 
-export default Aaprueba
+export default ListContacto
 
