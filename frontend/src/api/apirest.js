@@ -16,8 +16,5 @@ export const ApiContactList = 'v1/client/contact?alias='
 
 export const ApiContactEdit = 'v1/client/contact/1'
 
-export const ApiContactDelete = 'v1/client/contact/2'
-
-export const ApiGetContact = 'v1/client/contact/3'
 
 
