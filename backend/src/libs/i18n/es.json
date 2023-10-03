@@ -1,0 +1,36 @@
+{
+    "USER": {
+        "CREATED": "Usuario registrado con éxito",
+        "LOGIN": "Usuario logueado con éxito",
+        "WHO_AM_I": "Usuario validado con éxito",
+        "BALANCE": "Balance obtenido con éxito",
+        "FOUND": "Usuario encontrado con éxito",
+        "PASSWORD_UPDATED": "Contraseña actualizada con éxito"
+    },
+    "CONTACT": {
+        "CREATED": "Contacto registrado con éxito",
+        "UPDATED": "Contacto actualizado con éxito",
+        "DELETED": "Contacto eliminado con éxito",
+        "FOUND": "Contacto encontrado con éxito"
+    },
+    "MOVEMENT": {
+        "CREATED": "Transferencia realizada con éxito"
+    },
+    "ERRORS": {
+        "FIELD_VALIDATION": "El campo {{.Field}} no cumple la validación {{.Validation}} {{.Valid}}",
+        "INTERNAL_SERVER": "Error interno del servidor",
+        "INVALID_REQUEST_BODY": "Los datos de la solicitud son inválidos",
+        "NOT_FOUND": "Entidad no encontrada",
+        "PAGE_SIZE_TOO_LARGE": "Valor muy alto para tamaño de página",
+        "PAGE_TOO_LARGE": "Valor muy alto para página",
+        "UNAUTHORIZED": "Usuario no autorizado, credenciales incorrectas",
+        "UNSUPPORTED_FIELD_VALUE": "Valor no soportado para {{.Field}}",
+        "URL_NOT_FOUND": "URL no encontrada",
+        "USER_DUPLICATED": "Ya existe un usuario registrado con esos datos",
+        "INSUFFICIENT_BALANCE": "Saldo insuficiente para la transacción",
+        "SAME_WALLET": "No puedes transferir a tu propia billetera",
+        "SAME_CONTACT": "No puedes agendar a tu propia billetera",
+        "ALIAS_IN_USE": "Ya estás usando ese alias en otro contacto",
+        "DUPLICATE_CONTACT": "Ya tienes agregado a este contacto"
+    }
+}
