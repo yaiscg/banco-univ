@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from "react";
-
 import NavbarBanca from "../banca/components/NavbarBanca"
 import Header from "../banca/components/Header"
-
 import Edit from "./Edit";
 import ViewContactos from "./ViewContactos";
 
-import { Apiurl, ApiContactList } from '../api/apirest';
+import { Apiurl, ApiContactList, ApiContactId } from '../api/apirest';
 import axios from 'axios';
 
-//ICONOS
+//ICONOS 
 import { RiEyeLine, RiDeleteBinLine } from "react-icons/ri";
 import { FaUserEdit } from "react-icons/fa";
-import { Navigate, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 
 const ListContacto = () => {
 
     const navigate = useNavigate();
-    const [contactos,setLista] = useState([]);
+    const [contactos, setLista] = useState([]);
     const [tablaContactos, setTablaContactos]= useState([]); //////////////////// PARA LA BARRA BUSCADORA
-    const [id,setId] = useState("");
-    const [account_number,setAccount_number] = useState("");
-    const [alias,setAlias] = useState(""); 
-    const [description,setDescription] = useState("");
+
+    const [selectedContactId, setSelectedContactId] = useState(null);
+    const [selectedContactEdit, setSelectedContactEdit] = useState(null);
+
+    const [showServerError, setShowServerError] = useState(false); // Estado para mostrar el mensaje de error del servidor
     const token = localStorage.getItem("JWT");
 
     useEffect(() => {
@@ -34,24 +32,55 @@ const ListContacto = () => {
                 Authorization: "Bearer " + token
             }
         })
-        .then(response => {
-            console.log(response);
-            setLista(response.data.data);
-            setTablaContactos(response.data.data); ///////PARA LA BARRA BUSCADORA
-        })
-        .catch(error => {
-            console.log(error);
-        });
-    
-    },[ ]);
+            .then(response => {
+                setLista(response.data.data);
+                setTablaContactos(response.data.data); ///////PARA LA BARRA BUSCADORA
+            })
+            .catch(error => {
+                setShowServerError(true);
+                console.log(error);
+            });
+    }, [token]);
 
     const [showEdit, setShowEdit] = useState(false);
     const handleOnClose = () => { setShowEdit(false) }
-
     const [showView, setShowView] = useState(false);
     const handleOnClose2 = () => { setShowView(false) }
+    const handleEditClick = (id) => {
+        setSelectedContactEdit(id);
+        setShowEdit(true);
+    };
 
-    /////////////////////////BARRA BUSCADORA
+    const handleViewClick = (id) => {
+        setSelectedContactId(id);
+        setShowView(true);
+    };
+    const handleContinueClick = () => {
+        window.location.reload();
+    };
+
+////////////////FUNCION ELIMINAR CONTACTO 
+
+    function handleSubmit(id) {
+        const conf = window.confirm("¿Desea eliminar este contacto?");
+        if (conf) {
+            axios.delete(Apiurl + ApiContactId + id, {
+                headers: {
+                    Authorization: "Bearer " + token
+                }
+            })
+                .then(response => {
+                    alert("Contacto eliminado.")
+                    navigate("/listcontacto")
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 3000);
+                })
+                .catch(err => console.log(err))
+        }
+    }
+
+/////////////////////////BARRA BUSCADORA
 
     const [busqueda, setBusqueda]= useState("");
 
@@ -59,42 +88,36 @@ const ListContacto = () => {
         setBusqueda(e.target.value);
         filtrar(e.target.value);
     }
-
+    
     const filtrar=(terminoBusqueda)=>{
         var resultadosBusqueda=tablaContactos.filter((elemento)=>{
-          if(elemento.alias.toString().toLowerCase().includes(terminoBusqueda.toLowerCase()))
-          {
-            return elemento;
-          }
+            if(elemento.alias.toString().toLowerCase().includes(terminoBusqueda.toLowerCase()))
+            {
+                return elemento;
+            }
         });
-        setLista(resultadosBusqueda);
-    }
-
+            setLista(resultadosBusqueda);
+        }
+    
 ///////////////////////////
 
     return (
         <div>
-
             <Header />
             <NavbarBanca />
-            
-            <div className="flex flex-col">
-
+            <div className="flex flex-col bg-gray-200 w-full h-screen">
                 <div className="overflow-x-auto">
                     <div className="flex justify-end px-8 py-3 pl-2">
- 
                         <div className="relative max-w-xs">
-                            
                             <input
                                 type="text"
                                 name="hs-table-search"
                                 id="hs-table-search"
-                                className="block w-full p-3 pl-10 text-sm border-gray-200 rounded-md dark:bg-gray-200 dark:border-gray-500 dark:text-gray-400"
+                                className="block w-full p-3 pl-10 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-white dark:border-gray-700 dark:text-gray-400"
                                 placeholder="Buscar por alias..."
                                 value={busqueda}
                                 onChange={handleChange}
                             />
-
                             <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                                 <svg
                                     className="h-3.5 w-3.5 text-gray-400"
@@ -108,9 +131,7 @@ const ListContacto = () => {
                                 </svg>
                             </div>
                         </div>
-
                     </div>
-
                     <div className="p-1.5 w-full inline-block align-middle">
                         <div className="overflow-hidden border rounded-lg">
                             <table className="min-w-full divide-y divide-gray-200">
@@ -154,66 +175,49 @@ const ListContacto = () => {
                                         </th>
                                     </tr>
                                 </thead>
-
-                                <tbody>
-                                    {contactos.map((contactos,id) => (
-                                        <tr key = {contactos.id}>
-                                            <td>{contactos.account_number}</td>
-                                            <td>{contactos.alias}</td>
-                                            <td>{contactos.description}</td>
-                                            <td scope="col" className="px-6 py-3 text-xs font-bold text-right  uppercase">
-                                                <button onClick={() => setShowView(true)} className="bg-transparent border-transparent text-black"><RiEyeLine className=" w-10 text-xl"/></button>
+                                <tbody className="bg-blue-50">
+                                    {contactos.map((contacto) => (
+                                        <tr key={contacto.id}>
+                                            <td>{contacto.account_number}</td>
+                                            <td>{contacto.alias}</td>
+                                            <td>{contacto.description}</td>
+                                            <td scope="col" className="px-6 py-3 text-xs font-bold text-right uppercase">
+                                                <button onClick={() => handleViewClick(contacto.id)} className="bg-transparent border-transparent text-black"><RiEyeLine className="w-10 text-xl" /></button>
+                                            </td>
+                                            <td className="px-6 py-3 text-xs font-bold text-right uppercase">
+                                                <button onClick={() => handleEditClick(contacto.id)} className="bg-transparent border-transparent text-black">
+                                                    <FaUserEdit className="w-10 text-xl" />
+                                                </button>
                                             </td>
                                             <td scope="col" className="px-6 py-3 text-xs font-bold text-right  uppercase">
-                                                <button onClick={() => setShowEdit(true)} className="bg-transparent border-transparent text-black"><FaUserEdit className=" w-10 text-xl"/></button>
+                                                <button onClick={e => handleSubmit(contacto.id)} className="bg-transparent border-transparent text-black"><RiDeleteBinLine className=" w-10 text-xl" /></button>
                                             </td>
-                                            <td scope="col" className="px-6 py-3 text-xs font-bold text-right  uppercase">
-                                                <button onClick={e => handleSubmit(contactos.id) } className="bg-transparent border-transparent text-black"><RiDeleteBinLine className=" w-10 text-xl"/></button>
-                                            </td>
-    
 
                                         </tr>
-                                    ))
-                                    }
+                                    ))}
                                 </tbody>
-
                             </table>
                         </div>
                     </div>
-
                 </div>
             </div>
-
-            <Edit onClose={handleOnClose} visible={showEdit}/>
-            <ViewContactos onClose={handleOnClose2} visible={showView}/>
-
+            <ViewContactos onClose={handleOnClose2} visible={showView} selectedContactId={selectedContactId} />
+            <Edit onClose={handleOnClose} visible={showEdit} selectedContactEdit={selectedContactEdit} />
+            {showServerError && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                    <div className="bg-white p-6 rounded-lg">
+                        <p className="text-center text-xl font-semibold">Error con el servidor.</p>
+                        <button
+                            className="mt-4 bg-primary text-white py-2 px-4 rounded-lg center"
+                            onClick={handleContinueClick}
+                        >
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
-
     )
 
-    ////////////////FUNCION ELIMINAR CONTACTO
-
-    function handleSubmit(id){
-        const conf = window.confirm("¿Desea eliminar este contacto?");
-        if (conf) {
-            axios.delete('http://localhost:3000/v1/client/contact/' + id, {
-                headers: {
-                    Authorization: "Bearer " + token
-                }
-            })
-            .then( response => {
-                alert("Contacto eliminado.")
-                navigate("/aaprueba")
-                setTimeout(() => {
-                    window.location.reload();
-                  }, 3000);
-            })
-            .catch(err => console.log(err))
-        }
-    }
-
-        
 }
-
-export default ListContacto
-
+export default ListContacto 

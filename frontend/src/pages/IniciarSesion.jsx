@@ -109,13 +109,9 @@ const IniciarSesion = () => {
               ) : (<RiEyeLine onClick={handleShowPassword} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:cursor-pointer" />
               )}
             </div>
-            <div className="flex justify-between w-full py-4">
-              <span className=" text-primary text-md"><Link to={"/olvido"}>Olvidé mi correo o contraseña</Link></span>
-            </div>
             <button type="submit" className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
               Iniciar sesión
             </button>
-            <p className="text-sm" onClick={() => navigate("/homebanca")}>Ir a la banca</p>
           </form>
           <div className="text-center text-gray-400">
             ¿No tienes cuenta?
@@ -124,7 +120,7 @@ const IniciarSesion = () => {
             </span>
           </div>
 
-          <div className='mt-10 text-center text-base'>
+          <div className='mt-6 text-center text-base'>
             <span className="font-light text-primary">
               <Link to={"/home"}> Volver a home</Link>
             </span>

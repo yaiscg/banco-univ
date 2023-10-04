@@ -4,17 +4,13 @@ import NavbarBanca from "../banca/components/NavbarBanca"
 import Header from "../banca/components/Header"
 import Paginacion from "../banca/Paginacion"
 
-
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 
 import { Apiurl, ApiMovimientos } from '../api/apirest';
 import axios from 'axios';
 
-import { Navigate, useNavigate } from "react-router-dom";
 
 const Movimientos = () => {
-
-    //const navigate = useNavigate();
 
     const [movimientos,setMovimientos] = useState([]);
     const [tablaMovimientos, setTablaMovimientos]= useState([]); //////////////////// PARA LA BARRA BUSCADORA
@@ -28,12 +24,20 @@ const Movimientos = () => {
 
     ////////////////// PAGINACION
 
-    const [movPerPage, setMovPerPage] = useState(5);
+
+    const [moviQt, setMovQt] = useState(5);
     const [currentPage, setCurrentPage] = useState(1);
 
-    const totalMov = movimientos.length
+    const indexFin = (currentPage * moviQt);
+    const indexIni = (indexFin - moviQt);
 
-    /////////////////
+    const nData = movimientos.slice(indexIni, indexFin)
+    const nPages = Math.ceil(movimientos.lenght / moviQt);
+
+    console.log(moviQt);
+
+
+    ///////////////// API
 
 
     const token = localStorage.getItem("JWT");
@@ -56,7 +60,7 @@ const Movimientos = () => {
     
     },[ ]);
 
-    /////////////////////
+    ///////////////////// FORMATO FECHA
 
     const formatDate = (created_at) => {
         return new Date(created_at).toLocaleString("es")
@@ -80,6 +84,9 @@ const Movimientos = () => {
             });
             setMovimientos(resultadosBusqueda);
     }
+    
+
+    ///////////////VISUAL
 
     return (
         <div>
@@ -87,7 +94,7 @@ const Movimientos = () => {
         <Header/>
         <NavbarBanca/>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col bg-gray-200 w-full h-screen">
 
                     <div className="overflow-x-auto">
                         <div className="flex justify-end px-8 py-3 pl-2">
@@ -98,7 +105,7 @@ const Movimientos = () => {
                                     type="text"
                                     name="hs-table-search"
                                     id="hs-table-search"
-                                    className="block w-full p-3 pl-10 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-200 dark:border-gray-700 dark:text-gray-400"
+                                    className="block w-full p-3 pl-10 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-white dark:border-gray-700 dark:text-gray-400"
                                     placeholder="Buscar por referencia..."
                                     value={busqueda}
                                     onChange={handleChange}
@@ -171,14 +178,14 @@ const Movimientos = () => {
                                     </thead>
                                     
                                     
-                                    <tbody>
+                                    <tbody className="bg-blue-50">
 
                                     {movimientos.map((movimientos,id) => (
                                         <tr key = {movimientos.id}>
                                             <td>{movimientos.id}</td>
                                             <td>{movimientos.amount}</td>
                                             <td>{movimientos.balance}</td>
-                                            <td>{movimientos.multiplier}</td>
+                                            <td className="px-14">{movimientos.multiplier}</td>
                                             <td>{movimientos.account_number}</td>
                                             <td>{movimientos.description}</td>
                                             <td>{formatDate(movimientos.created_at)}</td>
@@ -195,13 +202,6 @@ const Movimientos = () => {
                     </div>
                 </div>
 
-        <Paginacion 
-        movPerPage = {movPerPage} 
-        currentPage={currentPage} 
-        setCurrentPage={setCurrentPage}
-        totalMov={totalMov} />
-
-            
         </div>
 
         

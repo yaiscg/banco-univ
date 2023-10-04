@@ -23,9 +23,9 @@ import Logout from "./banca/Logout";
 import Frecuente from "./banca/Frecuente";
 import NoRegistrado from "./banca/NoRegistrado";
 import AggContacto from "./banca/AggContacto";
-import Aaprueba from "./banca/Aaprueba";                     ///////////////////
 import ListContacto from "./banca/ListContacto";
 import Movimientos from "./banca/Movimientos";
+import Contrasena from "./banca/Contrasena";
 
 function App() {
 
@@ -58,9 +58,9 @@ function App() {
         <Route path="/frecuente" element={<Frecuente/>} />
         <Route path="/noregistrado" element={<NoRegistrado/>} />
         <Route path="/aggcontacto" element={<AggContacto/>} />
-        <Route path="/aaprueba" element={<Aaprueba/>} />
         <Route path="/listcontacto" element={<ListContacto/>} />
         <Route path="/movimientos" element={<Movimientos/>} />
+        <Route path="/contrasena" element={<Contrasena/>} />
       </Routes>
     </div>
   );

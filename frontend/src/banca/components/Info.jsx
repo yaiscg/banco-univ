@@ -69,7 +69,7 @@ const Info = () => {
                     <div>
                         <h1 className="px-20 font-semibold">Cuenta Estudiantil</h1>
                         <h1 className="px-10 py-12 text-center">{AccountMessage}</h1>                  
-                          </div>
+                    </div>
 
                     <div>
                         <h1 className="px-20 font-semibold">Movimientos</h1>

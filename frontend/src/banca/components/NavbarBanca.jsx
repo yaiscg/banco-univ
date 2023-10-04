@@ -5,6 +5,7 @@ import { CiLogout } from "react-icons/ci";
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { LuContact } from "react-icons/lu";
 import { AiOutlineFileSearch } from "react-icons/ai";
+import {RiUser3Line} from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -22,6 +23,8 @@ const NavbarBanca = () => {
     const [isOpen2, setIsOpen2] = useState(false)
 
     const [isOpen3, setIsOpen3] = useState(false)
+
+    const [isOpen4, setIsOpen4] = useState(false)
 
     const handleClick = () => setNav(!nav)
     const navigate = useNavigate();
@@ -112,6 +115,29 @@ const NavbarBanca = () => {
 
                                             <button className="border-transparent bg-transparent text-black">
                                                 <h1 className="px-5 py-2 text-sm"><Link to="/listcontacto">Listado</Link></h1>
+                                            </button>
+
+                                        </div>
+
+                                    )}
+                                </div>
+                            </button>
+
+                            <button
+                                className="bg-transparent border-transparent text-black px-24"
+                                onClick={() => setIsOpen4((prev) => !prev)}>
+                                <div className="hidden md:flex items-center">
+                                    <RiUser3Line className="px-1 w-9" />
+                                    <h1>Perfil</h1>
+                                    {!isOpen4 ? (
+                                        <BsChevronDown className="px-1 w-7" />
+                                    ) : (
+                                        <BsChevronUp className="px-1 w-7" />
+                                    )}
+                                    {isOpen4 && (
+                                        <div className="bg-zinc-100 absolute top-10 flex flex-col items-start py-2 w-[200px]">
+                                            <button className="border-transparent bg-transparent text-black">
+                                                <h1 className="px-5 py-2 text-sm"><Link to="/contrasena">Cambiar contraseña</Link></h1>
                                             </button>
 
                                         </div>
