@@ -13,6 +13,8 @@ const AggContacto = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [showMessage1, setShowMessage1] = useState(false);
   const [showMessage2, setShowMessage2] = useState(false);
+  const [showMessage3, setShowMessage3] = useState(false);
+
   const navigate = useNavigate();
 
   /////////////////////////////////////////////////////
@@ -66,7 +68,7 @@ const AggContacto = () => {
             window.location.reload();
           }, 3000);
         } else {
-          setShowMessage2(true);
+          setShowMessage3(true);
           setTimeout(() => {
             window.location.reload();
           }, 5000);
@@ -184,13 +186,20 @@ const AggContacto = () => {
                 </div>
               </div>
             )}
+            {showMessage3 && (
+              <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 ">
+                <div className="bg-white p-6 rounded-lg">
+                  <p className="text-center text-xl font-semibold">No exite ese numero cuenta.</p>
+                </div>
+              </div>
+            )}
             {showMessage2 && (
               <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 ">
                 <div className="bg-white p-6 rounded-lg">
                   <p className="text-center text-xl font-semibold">Contacto registrado con éxito.</p>
                   <button
                     className="mt-4 bg-primary text-white py-2 px-4 rounded-lg center"
-                    onClick={() => navigate("/aggcontacto")}
+                    onClick={() => navigate("/homebanca")}
                   >
                     Continuar
                   </button>
@@ -200,11 +209,11 @@ const AggContacto = () => {
 
             <div className="grid grid-cols-2 gap-6">
           
-          <button type="submit" className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
+          <button type="submit" className="w-full text-white mt-4 py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
             Confirmar
           </button>
 
-          <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary" onClick={handleLimpiar}>
+          <button className="w-full text-white py-3 px-6 mt-4 rounded-lg mb-6 bg-secondary border-secondary" onClick={handleLimpiar}>
             Limpiar
           </button>
 

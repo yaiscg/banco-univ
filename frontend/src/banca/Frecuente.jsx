@@ -5,6 +5,8 @@ import Header from "../banca/components/Header";
 import { Apiurl, ApiAccount, ApiMovement, ApiContactList } from '../api/apirest';
 import axios from 'axios';
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/20/solid';
+import { ArrowUturnLeftIcon } from '@heroicons/react/20/solid'
+import { useNavigate } from 'react-router-dom';
 
 const Frecuente = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -12,7 +14,10 @@ const Frecuente = () => {
   const [selectedContact, setSelectedContact] = useState('');
   const [contacts, setContacts] = useState([]);
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigate = useNavigate();
+
+
+  const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
   const token = localStorage.getItem("JWT");
 
@@ -62,6 +67,9 @@ const Frecuente = () => {
     }
   });
 
+  const handleLimpiar = () => {
+    reset();
+  };
 
   return (
     <div>
@@ -144,10 +152,10 @@ const Frecuente = () => {
                 }
               </div>
               <div className="grid grid-cols-2 gap-6">
-                <button type="submit" className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
+                <button type="submit" className="w-full text-white py-3 px-6 rounded-lg mb-6 mt-4 bg-secondary border-secondary">
                   Transferir
                 </button>
-                <button className="w-full text-white py-3 px-6 rounded-lg mb-6 bg-secondary border-secondary">
+                <button onClick={handleLimpiar} className="w-full text-white py-3 px-6 rounded-lg mt-4 mb-6 bg-secondary border-secondary">
                   Limpiar
                 </button>
                 {showSuccessMessage && (
@@ -185,6 +193,12 @@ const Frecuente = () => {
                   </div>
                 )}
               </div>
+              <div className="flex items-center justify-center mt-5">
+                <button className="border-none bg-transparent flex items-center" onClick={() => navigate("/HomeBanca")}>
+                <span className="flex items-center justify-center text-sm text-primary font-Montserrat">Regresar al inicio</span>
+                <ArrowUturnLeftIcon className="w-3 h-3 text-sm ml-2 align-middle text-primary"></ArrowUturnLeftIcon>
+              </button>
+        </div>
             </div>
           </div>
         </div>

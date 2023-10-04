@@ -12,6 +12,7 @@ const NoRegistrado = () => {
   
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false); 
+  const [showNotFoundMessage, setShowNotFoundMessage] = useState(false);  
   const navigate = useNavigate();
 
   const {
@@ -58,7 +59,8 @@ const NoRegistrado = () => {
           }
       })
       .catch(error => {
-        console.log(error);
+        setShowNotFoundMessage(true);
+        console.log(1,error);
       });
     } 
   });
@@ -212,10 +214,27 @@ const NoRegistrado = () => {
               </button>
               </div>
             </div>
-          )}          
+          )} 
+           {showNotFoundMessage && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
+            <div className="bg-white px-10 py-2 rounded-2xl shadow transition transform duration-300">
+            <div className="flex items-center justify-center mt-3">
+              <XCircleIcon className='text-primary w-1/4 h-1/4 text-sm'></XCircleIcon>
+            </div>
+            <span className="flex items-center justify-center py-3 text-xl font-Montserrat text-primary font-bold">Ha ocurrido un error</span>
+            <span className="flex items-center justify-center text-sm">El número de cuenta no es correcto</span>
+              <button
+                className="w-full text-white py-3 px-6 rounded-lg mt-10 mb-6 bg-secondary border-secondary transition-colors duration-300 hover:bg-secondary-dark"
+                onClick={() => setShowNotFoundMessage(false)}
+                >            
+                Cerrar
+              </button>
+              </div>
+            </div>
+          )}                      
         </div>  
         <div className="flex items-center justify-center mt-5">
-          <button className="border-none bg-secondary flex items-center" onClick={() => navigate("/HomeBanca")}>
+          <button className="border-none bg-transparent flex items-center" onClick={() => navigate("/HomeBanca")}>
           <span className="flex items-center justify-center text-sm text-primary font-Montserrat">Regresar al inicio</span>
           <ArrowUturnLeftIcon className="w-3 h-3 text-sm ml-2 align-middle text-primary"></ArrowUturnLeftIcon>
           </button>
