@@ -73,23 +73,28 @@ const Contrasena = () => {
          }
        })
        .then((response) => {
-         if (response.statusText === "Updated") {
-           setShowMessage(false);
-           setShowMessage1(true);
+         if (response.statusText === "OK") {
+          console.log(response);
+          setShowMessage(false);
+          setShowMessage1(true);
          }
        })
        .catch(error => {
          console.log(error);
-         if (error.response.status === 409) {
-           setShowMessage(false);  
-           setTimeout(() => {
-             window.location.reload();
-           }, 3000);
+         if (error.response && error.response.status === 409) {
+          setShowMessage(false);  
+          setShowMessage2(true);
+
+          setTimeout(() => {
+            window.location.reload();
+          }, 3000);
          } else {
-           setShowMessage1(true);
-           setTimeout(() => {
-             window.location.reload();
-           }, 5000);
+          setShowMessage(false);  
+
+          setShowMessage2(true);
+          setTimeout(() => {
+            window.location.reload();
+          }, 5000);
          }
        })
      }
@@ -97,6 +102,7 @@ const Contrasena = () => {
  
 
   return (
+    
     
     <div>
         <Header/>
@@ -147,7 +153,7 @@ const Contrasena = () => {
                 {...register("new_password", {
                   required: {
                     value: true,
-                    message: "Por favor escriba su nueva contraseá"
+                    message: "Por favor escriba su nueva contraseña"
                   },
                   pattern: {
                     value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/,
@@ -190,7 +196,20 @@ const Contrasena = () => {
                   <p className="text-center text-xl font-semibold">Contraseña actualizada con éxito.</p>
                   <button
                     className="mt-4 bg-primary text-white py-2 px-4 rounded-lg center"
-                    onClick={() => navigate("/contrasena")}
+                    onClick={() => navigate("/homebanca")}
+                  >
+                  Continuar
+                  </button>
+                </div>
+              </div>
+            )}
+            {showMessage2 && (
+              <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 ">
+                  <div className="bg-white p-6 rounded-lg">
+                  <p className="text-center text-xl font-semibold">Error de Servidor.</p>
+                  <button
+                    className="mt-4 bg-primary text-white py-2 px-4 rounded-lg center"
+                    onClick={() => navigate("/homebanca")}
                   >
                   Continuar
                   </button>
