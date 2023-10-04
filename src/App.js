@@ -25,6 +25,8 @@ import NoRegistrado from "./banca/NoRegistrado";
 import AggContacto from "./banca/AggContacto";
 import ListContacto from "./banca/ListContacto";
 import Movimientos from "./banca/Movimientos";
+import Contrasena from "./banca/Contrasena";
+
 
 function App() {
 
@@ -59,6 +61,8 @@ function App() {
         <Route path="/aggcontacto" element={<AggContacto/>} />
         <Route path="/listcontacto" element={<ListContacto/>} />
         <Route path="/movimientos" element={<Movimientos/>} />
+        <Route path="/contrasena" element={<Contrasena/>} />
+
       </Routes>
     </div>
   );
